@@ -1,15 +1,25 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
+import {BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+
+// Pages components
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import Cities from "./components/pages/Cities";
+import About from "./components/pages/About";
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
-    <>
-      <h1>Air Polution Cheker App is coming up soon!</h1>
-    </>
+    <Router>
+      <Header />
+      <div className="search_bar">Search Bar</div>
+      <div>Search Categories</div>
+      <Routes>
+        <Route path='/' element={<Cities />} />
+        <Route path='/About' element={<About />}/>
+      </Routes>
+      <Footer />
+    </Router>
   )
 }
 
