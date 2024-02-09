@@ -1,4 +1,6 @@
 import {BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { ThemeProvider, createTheme } from '@mui/material/styles';
+import CssBaseline from '@mui/material/CssBaseline';
 
 // Pages components
 import Header from "./components/Header";
@@ -7,10 +9,18 @@ import Cities from "./components/pages/Cities";
 import About from "./components/pages/About";
 import Search from "./components/pages/Search";
 
+const darkTheme = createTheme({
+  palette: {
+    mode: 'dark',
+  },
+});
+
 function App() {
 
   return (
     <Router>
+      <ThemeProvider theme={darkTheme}>
+      <CssBaseline />
       <Header />
       <Search />
       <div>Search Categories</div>
@@ -20,6 +30,7 @@ function App() {
         <Route path='/About' element={<About />}/>
       </Routes>
       <Footer />
+      </ThemeProvider>
     </Router>
   )
 }

@@ -91,6 +91,7 @@ function Header(props){
             keepMounted: true, // Better open performance on mobile.
           }}
           sx={{
+            background: '#1a1c21',
             display: { xs: 'block', sm: 'none' },
             '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
           }}

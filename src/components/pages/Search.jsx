@@ -1,6 +1,8 @@
 import React from "react";
 import TextField from '@mui/material/TextField';
 import Autocomplete, { createFilterOptions } from '@mui/material/Autocomplete';
+import InputAdornment from '@mui/material/InputAdornment';
+import SearchIcon from '@mui/icons-material/Search';
 
 const filter = createFilterOptions();
 
@@ -43,7 +45,7 @@ function Search(){
         selectOnFocus
         clearOnBlur
         handleHomeEndKeys
-        id="free-solo-with-text-demo"
+        id="search-city"
         options={cityNames}
         getOptionLabel={(option) => {
           // Value selected with enter, right from the input
@@ -58,10 +60,24 @@ function Search(){
           return option.city;
         }}
         renderOption={(props, option) => <li {...props}>{option.city}</li>}
-        sx={{ width: 300 }}
+        sx={{ width: 300}}
         className={'search_bar--inner'}
         renderInput={(params) => (
-          <TextField {...params} label="Type a city name" />
+          <TextField {...params}
+          label="Type a city name"
+          sx={{
+            '.MuiOutlinedInput-root': {
+              paddingRight: '15px !important'
+            }
+            }}
+          InputProps={{
+            ...params.InputProps,
+            endAdornment: (
+              <InputAdornment position="end">
+                <SearchIcon />
+              </InputAdornment>
+            ),
+          }} />
         )}
       />
     </div>

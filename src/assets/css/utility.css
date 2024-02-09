@@ -1,4 +1,7 @@
 :root {
-	--bg: #23272e;
+	--bg: #1a1c21;
+	--header-bg: #202329;
 	--theme: #0d6e8e;
+	--bg-sub: #303947;
+	--text-sub: #a1a1a1;
 }
