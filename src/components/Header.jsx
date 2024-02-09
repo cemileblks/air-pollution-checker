@@ -68,9 +68,9 @@ function Header(props){
           <Typography
             variant="h6"
             component="div"
-            sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' }, textAlign: 'left' }}
+            sx={{ flexGrow: 1, display: { xs: 'none', sm: 'flex' }, textAlign: 'left' }}
           >
-            Air Poluttion Checker
+            <img style={{width: '35px', marginRight: '15px'}}src="/images/icon-pollu.png" alt="pollu icon" />Air Poluttion Checker
           </Typography>
           <Box sx={{ display: { xs: 'none', sm: 'flex' } }}>
             {navItems.map((item) => (
