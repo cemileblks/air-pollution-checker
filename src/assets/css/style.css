@@ -19,18 +19,45 @@ body {
 	min-height: 86vh;
 }
 
-.search_bar {
-	margin-top: 64px;
+/* Search Bar */
+.search_bar--container {
+	/* Nav height 64px */
+	margin-top: 125px;
+	margin-bottom: 35px;
 }
 
-.header--container {
-	background: var(--bg);
+@media only screen and (max-width: 599px) {
+	.search_bar--container {
+		margin-top: 80px;
+		margin-bottom: 25px;
+	}
+}
+
+#search-city {
+	color: var(--text-sub);
+}
+
+.search_bar--inner {
+	margin: 0 auto;
+}
+
+.search_bar--inner div {
+	border-radius: 30px;
+}
+
+/* Card */
+.card--container {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 10px;
+	justify-content: center;
+	margin: 50px;
 }
 
 /* Footer */
 
 .footer {
-	background: var(--brown);
+	background: var(--bg);
 	color: var(--white);
 }
 

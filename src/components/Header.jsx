@@ -1,7 +1,6 @@
 import React from "react";
 import { NavLink } from 'react-router-dom';
 
-import PropTypes from 'prop-types';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -22,7 +21,7 @@ import '../assets/css/reset.css'
 import '../assets/css/style.css'
 
 const drawerWidth = 240;
-const navItems = ['Home', 'About', 'Contact'];
+const navItems = ['HOME', 'ABOUT', 'CONTACT'];
 
 function Header(props){
   const { window } = props;
@@ -69,15 +68,15 @@ function Header(props){
           <Typography
             variant="h6"
             component="div"
-            sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
+            sx={{ flexGrow: 1, display: { xs: 'none', sm: 'flex' }, textAlign: 'left' }}
           >
-            Air Poluttion Checker
+            <img style={{width: '35px', marginRight: '15px'}}src="/images/icon-pollu.png" alt="pollu icon" />Air Poluttion Checker
           </Typography>
-          <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
+          <Box sx={{ display: { xs: 'none', sm: 'flex' } }}>
             {navItems.map((item) => (
-              <Button key={item} sx={{ color: '#fff' }}>
+              <ListItemButton component={NavLink} to={item} key={item} sx={{ color: '#fff' }}>
                 {item}
-              </Button>
+              </ListItemButton>
             ))}
           </Box>
         </Toolbar>
@@ -92,6 +91,7 @@ function Header(props){
             keepMounted: true, // Better open performance on mobile.
           }}
           sx={{
+            background: '#1a1c21',
             display: { xs: 'block', sm: 'none' },
             '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
           }}
