@@ -8,6 +8,7 @@ import Footer from "./components/Footer";
 import Cities from "./components/pages/Cities";
 import About from "./components/pages/About";
 import Search from "./components/pages/Search";
+import Category from "./components/pages/Category";
 
 const darkTheme = createTheme({
   palette: {
@@ -23,7 +24,7 @@ function App() {
       <CssBaseline />
       <Header />
       <Search />
-      <div>Search Categories</div>
+      <Category />
       <Routes>
         <Route path='/' element={<Cities />} />
         <Route path='/HOME' element={<Cities />} />
