@@ -1,9 +1,11 @@
 import { useState, useEffect } from "react";
+import { format } from "date-fns"; // Importing the format function from date-fns
+
 export default function Harrycomponent() {
   const [location, setLocation] = useState("");
+
   const handleSubmit = (e) => {
     e.preventDefault();
-
     setLocation(e.target[0].value);
   };
 
@@ -35,6 +37,13 @@ export default function Harrycomponent() {
           )
             .then((response) => response.json())
             .then((result) => {
+              // Date formatting code starts here
+              var date = new Date("2016-01-04 10:34:23");
+              var formattedDate = format(date, "MMMM do, yyyy H:mma");
+              console.log(formattedDate);
+              // Date formatting code ends here
+
+              console.log(result);
               console.log(result.list[0].components);
             })
             .catch((error) => console.log("error", error));
