@@ -54,7 +54,7 @@ function Header(props){
   return (
     <Box >
       <CssBaseline />
-      <AppBar component="nav" sx={{ background: '#23272e' }} >
+      <AppBar position="relative" component="nav" sx={{ background: '#23272e' }} >
         <Toolbar>
           <IconButton
             color="inherit"
