@@ -1,4 +1,7 @@
 import React from "react";
+import {Link} from "react-router-dom";
+
+// Mui
 import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
 import Card from '@mui/material/Card';
@@ -90,32 +93,33 @@ const cityData = [
 function Cities(){
   return (
     <Container sx={{display: 'flex'}}className={'card--container'}>
-      {/* <CssBaseline /> */}
+      <ThemeProvider theme={themedCard}>
       {cityData.map((city)=>(
-        <ThemeProvider theme={themedCard}>
-          <Card sx={{ width: 315 }} key={city.id}>
-            <React.Fragment>
-              <CardMedia
-                component="img"
-                alt="green iguana"
-                height="300"
-                image={city.imgUrl}
-                />
-              <CardContent>
-                <Typography gutterBottom variant="h5" component="div" sx={{textAlign: 'left', color: '#ffffff'}}>
-                  {city.cityName}
-                </Typography>
-                <Typography variant="body2" sx={{textAlign: 'left'}}>
-                  {city.desc}
-                </Typography>
-                <Typography variant="body2" sx={{textAlign: 'left'}}>
-                  Some pollution Number
-                </Typography>
-              </CardContent>
-              </React.Fragment>
-            </Card>
-        </ThemeProvider>
+          <Link to={`/city/${city.id}`} key={city.id}>
+            <Card sx={{ width: 315 }}>
+              <React.Fragment>
+                <CardMedia
+                  component="img"
+                  alt="green iguana"
+                  height="300"
+                  image={city.imgUrl}
+                  />
+                <CardContent>
+                  <Typography gutterBottom variant="h5" component="div" sx={{textAlign: 'left', color: '#ffffff'}}>
+                    {city.cityName}
+                  </Typography>
+                  <Typography variant="body2" sx={{textAlign: 'left'}}>
+                    {city.desc}
+                  </Typography>
+                  <Typography variant="body2" sx={{textAlign: 'left'}}>
+                    Some pollution Number
+                  </Typography>
+                </CardContent>
+                </React.Fragment>
+              </Card>
+          </Link>
         ))}
+        </ThemeProvider>
     </Container>
   )
 }
