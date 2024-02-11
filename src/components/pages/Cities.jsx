@@ -92,7 +92,7 @@ function Cities(){
     <Container sx={{display: 'flex'}}className={'card--container'}>
       {/* <CssBaseline /> */}
       {cityData.map((city)=>(
-        <ThemeProvider theme={themedCard}>
+        <ThemeProvider key={city.id} theme={themedCard}>
           <Card sx={{ width: 315 }} key={city.id}>
             <React.Fragment>
               <CardMedia
