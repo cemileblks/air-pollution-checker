@@ -9,6 +9,21 @@ const filter = createFilterOptions();
 function Search(){
   const [value, setValue] = React.useState(null);
 
+  const handleSearch = () => {
+    console.log("handle search works")
+    if (value) {
+      onCitySearch(value.city);
+    }
+  };
+
+  const handleKeyDown = (event) => {
+
+    if (event.key === 'Enter') {
+      console.log("key-press enter works too")
+      handleSearch();
+    }
+  };
+
   return (
     <div className="search_bar--container">
       <Autocomplete
@@ -74,10 +89,11 @@ function Search(){
             ...params.InputProps,
             endAdornment: (
               <InputAdornment position="end">
-                <SearchIcon />
+                <SearchIcon onClick={handleSearch}/>
               </InputAdornment>
             ),
-          }} />
+          }} 
+          onKeyDown={handleKeyDown}/>
         )}
       />
     </div>
@@ -85,6 +101,6 @@ function Search(){
 }
 
 const cityNames = [
-  { city: 'London', country: 'UK' }
+  { city: 'London', country: 'UK' } // getting error when trying to add new city 
 ]
 export default Search;
