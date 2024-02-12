@@ -1,0 +1,26 @@
+.map-wrapper {
+    display: flex;
+    justify-content: center;
+    /* Center horizontally */
+    align-items: center;
+    /* Center vertically */
+    height: 80vh;
+    /* Make the wrapper take the full height of the viewport */
+}
+
+.map-container {
+    height: 400px;
+    width: 400px;
+}
+
+
+.placeholder {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    background-color: rgb(247, 220, 220);
+
+    .placeholder-text {
+        margin: auto;
+    }
+}

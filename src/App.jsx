@@ -13,6 +13,9 @@ import Category from "./components/pages/Category";
 import CityIndividual from "./components/pages/CityIndividual";
 import Breadcrumb from './components/pages/Breadcrumbs';
 
+// Features map component 
+import 'maplibre-gl/dist/maplibre-gl.css';
+
 const darkTheme = createTheme({
   palette: {
     mode: 'dark',
