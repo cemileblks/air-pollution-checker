@@ -6,3 +6,7 @@
 	--text-sub: #a1a1a1;
 	--text-smphasis: #ffffff;
 }
+
+.section--container {
+	padding: 0 65px;
+}

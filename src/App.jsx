@@ -1,4 +1,5 @@
-import {BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import React from 'react';
+import {BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 
@@ -11,6 +12,8 @@ import Search from "./components/pages/Search";
 import Category from "./components/pages/Category";
 import SearchCity from './components/pages/SearchCity';
 import Status from "./Status";
+import CityIndividual from "./components/pages/CityIndividual";
+import Breadcrumb from './components/pages/Breadcrumbs';
 
 const darkTheme = createTheme({
   palette: {
@@ -25,14 +28,17 @@ function App() {
       <ThemeProvider theme={darkTheme}>
       <CssBaseline />
       <Header />
+      {/* Show only in the individual page */}
+      <Breadcrumb />
       <Search />
       <SearchCity />
       <Status />
       <Category />
       <Routes>
         <Route path='/' element={<Cities />} />
-        <Route path='/HOME' element={<Cities />} />
-        <Route path='/About' element={<About />}/>
+        <Route path='/home' element={<Cities />} />
+        <Route path='/city/:cityId' element={<CityIndividual />} />
+        <Route path='/about' element={<About />}/>
       </Routes>
       <Footer />
       </ThemeProvider>
