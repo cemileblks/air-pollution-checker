@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import './CityMap.css';
 import maplibre from 'maplibre-gl';
-import Search from '../../pages/Search'
+// import Search from '../../pages/Search'
+import BoringSearchBox from '../../pages/BoringSearchBox';
 import GetLatLong from '../GetLatLong/GetLatLong';
 import GetAirQualityData from '../GetAirQualityData/GetAirQualityData';
 import GetCityPolygon from '../GetCityPolygon/GetCityPolygon';
@@ -82,7 +83,7 @@ function CityMap() {
             <div className="map-wrapper">
                 <div className="map-container" id="map-container"></div>
             </div>
-            <Search onCitySearch={handleCitySearch} />
+            <BoringSearchBox onCitySearch={handleCitySearch} />
         </div>
     )
 
