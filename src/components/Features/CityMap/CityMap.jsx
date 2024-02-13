@@ -61,9 +61,15 @@ function CityMap() {
 
     //call to stat map from geoapify documentaion
     useEffect(() => {
-        // some inital placeholder city
+
+        // inital placeholder city
         initializeMap('London');
 
+        return () => {
+            if (map) {
+                map.remove();
+            }
+        };
     }, []);
 
     const handleCitySearch = async (cityName) => {
