@@ -6,7 +6,7 @@ import SearchIcon from '@mui/icons-material/Search';
 
 const filter = createFilterOptions();
 
-function Search(){
+function Search({ onCitySearch }){
   const [value, setValue] = React.useState(null);
 
   const handleSearch = () => {

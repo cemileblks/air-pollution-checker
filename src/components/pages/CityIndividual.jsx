@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import { useParams } from 'react-router-dom';
+import CityMap from '../Features/CityMap/CityMap';
 
 function CityIndividual() {
   const { cityId } = useParams();
@@ -8,9 +9,7 @@ function CityIndividual() {
     <>
       City ID: {cityId}
       <section className="section--container" id="cityIndividual">
-        <div className="card_image--wrapper">
-          <img src='/images/sample/img_card01.png' alt='' />
-        </div>
+        <CityMap />
         <div className="card_desc--wrapper">
           1 Some informationSome informationSome informationSome informationSome informationSome informationSome informationSome information
         </div>

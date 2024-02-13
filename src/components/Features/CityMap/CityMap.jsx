@@ -2,12 +2,13 @@ import React, { useEffect, useState } from 'react';
 import './CityMap.css';
 import maplibre from 'maplibre-gl';
 import Search from '../../pages/Search'
-import GetLatLong from '../GetLatLong';
-import GetAirQualityData from '../GetAirQualityData';
-import GetCityPolygon from '../GetCityPolygon';
-import addColorLayer from '../AddColorLayer';
+import GetLatLong from '../GetLatLong/GetLatLong';
+import GetAirQualityData from '../GetAirQualityData/GetAirQualityData';
+import GetCityPolygon from '../GetCityPolygon/GetCityPolygon';
+import addColorLayer from '../AddColorLayer/AddColorLayer';
 
 function CityMap() {
+    const [map, setMap] = useState(null);
     const [initialState, setInitialState] = useState({
         lng: -1.0724, //london
         lat: 53.9920,
