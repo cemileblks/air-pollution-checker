@@ -1,68 +1,56 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, Component } from "react";
 import { format } from "date-fns"; // Importing the format function from date-fns
 import { BarChart } from "@mui/x-charts/BarChart";
+import moment from "moment";
 
 export default function Harrycomponent() {
+  const currentDate = moment().unix();
+  const startDate = moment().subtract(2, "days").unix();
   const [location, setLocation] = useState("");
-  const [pollution, setPollution] = useState({});
-  const handleSubmit = async (e) => {
-    try {
-      e.preventDefault();
-      var requestOptions = {
-        method: "GET",
-        redirect: "follow",
-      };
+  const [pollution, setPollution] = useState(null); // Initialize pollution as null initially
+  const [labels, setLabels] = useState([]);
+  const [coDataApi, setcoDataApi] = useState([]);
 
-      setLocation(e.target[0].value);
-    } catch (err) {
-      console.log(err);
-    }
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setLocation(e.target[0].value);
   };
 
   useEffect(() => {
     if (location) {
-      var requestOptions = {
-        method: "GET",
-        redirect: "follow",
-      };
-
       fetch(
-        `http://api.openweathermap.org/geo/1.0/direct?q=${location}&appid=ab0509029ed1dc73eec6975abe27b2b9`,
-        requestOptions
+        `http://api.openweathermap.org/geo/1.0/direct?q=${location}&appid=134a7bca60f2f212f1b9faaf871be508`
       )
         .then((response) => response.json())
         .then((result) => {
-          console.log(result[0].lat);
-          console.log(result[0].lon);
-          let lat = result[0].lat;
-          let lon = result[0].lon;
-          var requestOptions = {
-            method: "GET",
-            redirect: "follow",
-          };
+          const lat = result[0].lat;
+          const lon = result[0].lon;
 
           fetch(
-            `http://api.openweathermap.org/data/2.5/air_pollution/history?lat=${lat}&lon=${lon}&start=1706745600&end=1707264000&appid=ab0509029ed1dc73eec6975abe27b2b9`,
-            requestOptions
+            `http://api.openweathermap.org/data/2.5/air_pollution/history?lat=${lat}&lon=${lon}&start=${startDate}&end=${currentDate}&appid=134a7bca60f2f212f1b9faaf871be508`
           )
             .then((response) => response.json())
             .then((result) => {
-              // Date formatting code starts here
-              var date = new Date();
-              var formattedDate = format(date, "MMMM do, yyyy H:mma");
-              console.log(formattedDate);
-              // Date formatting code ends here
+              setPollution(result.list);
+              const labelsData = result.list.filter((item) => {
+                return moment.unix(item.dt).format("hh a") === "12 pm";
+              });
+              const coData = result.list.filter((item) => {
+                return moment.unix(item.dt).format("hh a") === "12 pm";
+              });
+              setcoDataApi(coData);
 
-              console.log(result);
-              console.log(Object.values(result.list[0].components));
-              setPollution(result.list[0].components);
+              setLabels(labelsData);
+              //console.log(labelsData);
+              console.log(result.list);
+              //console.log(labels);
             })
             .catch((error) => console.log("error", error));
         })
         .catch((error) => console.log("error", error));
     }
   }, [location]);
-
+  //console.log(coDataApi);
   return (
     <div>
       <form onSubmit={handleSubmit}>
@@ -70,17 +58,54 @@ export default function Harrycomponent() {
         <button type="submit">Search</button>
       </form>
       <div>
-        <BarChart
-          series={[
-            { data: [35, 44, 24, 34] },
-            { data: [51, 6, 49, 30] },
-            { data: [15, 25, 30, 50] },
-            { data: [60, 50, 15, 25] },
-          ]}
-          height={290}
-          xAxis={[{ data: ["2/13/24", "Q2", "Q3", "Q4"], scaleType: "band" }]}
-          margin={{ top: 10, bottom: 30, left: 40, right: 10 }}
-        />
+        {pollution && ( // Render BarChart only when pollution data is available
+          <BarChart
+            series={[
+              {
+                data: [coDataApi[0].components.co, coDataApi[1].components.co],
+                label: "co",
+                //data: [coDataApi[0].components.o3, coDataApi[1].components.o3],
+              },
+              {
+                //data: [coDataApi[0].components.co, coDataApi[1].components.co],
+                data: [coDataApi[0].components.o3, coDataApi[1].components.o3],
+                label: "o3",
+              },
+              {
+                //data: [coDataApi[0].components.no, coDataApi[1].components.no],
+                data: [coDataApi[0].components.no, coDataApi[1].components.no],
+                label: "no",
+              },
+              {
+                //data: [coDataApi[0].components.no2, coDataApi[1].components.no2],
+                data: [
+                  coDataApi[0].components.no2,
+                  coDataApi[1].components.no2,
+                ],
+                label: "no2",
+              },
+              {
+                //data: [coDataApi[0].components.so2, coDataApi[1].components.so2],
+                data: [
+                  coDataApi[0].components.so2,
+                  coDataApi[1].components.so2,
+                ],
+                label: "so2",
+              },
+            ]}
+            height={290}
+            xAxis={[
+              {
+                data: [
+                  moment.unix(labels[0].dt).format("Do"),
+                  moment.unix(labels[1].dt).format("Do"),
+                ],
+                scaleType: "band",
+              },
+            ]}
+            margin={{ top: 10, bottom: 30, left: 40, right: 10 }}
+          />
+        )}
       </div>
     </div>
   );
