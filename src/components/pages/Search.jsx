@@ -3,12 +3,15 @@ import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 
+
 function SearchButton({ onSearch }) {
   const [cityName, setCityName] = useState('');
+
 
   const handleChange = (event) => {
     setCityName(event.target.value.trim());
   };
+
 
   const handleKeyDown = (event) => {
     if (event.key === 'Enter') {
@@ -16,9 +19,11 @@ function SearchButton({ onSearch }) {
     }
   };
 
+
   const handleSearch = () => {
     onSearch(cityName);
   };
+
 
   return (
     <div className="search_bar--container">
@@ -42,5 +47,6 @@ function SearchButton({ onSearch }) {
     </div>
   );
 }
+
 
 export default SearchButton;
