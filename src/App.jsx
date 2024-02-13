@@ -28,6 +28,7 @@ function App() {
 
   const handleSearch = (city) => {
     setCityName(city);
+    console.log("setcityname works")
   };
 
 
@@ -43,9 +44,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Cities />} />
         <Route path='/home' element={<Cities />} />
-        {/* <Route path='/city/:cityId' element={<CityMap cityName={cityName} />} /> */}
-        <Route path='/city/:cityId' element={<CityIndividual />} />
-        {/* <Route path=`/city/${cityName}` element={<CityMap cityName={cityName} />} */}
+        <Route path='/city/:cityName' element={<CityIndividual />} />
         <Route path='/about' element={<About />}/>
       </Routes>
       <Footer />

@@ -3,13 +3,13 @@ import { useParams } from 'react-router-dom';
 import CityMap from '../Features/CityMap/CityMap';
 
 function CityIndividual() {
-  const { cityId } = useParams();
+  const { cityName } = useParams();
 
   return (
     <>
-      City ID: {cityId}
+      City: {cityName}
       <section className="section--container" id="cityIndividual">
-        <CityMap />
+        <CityMap cityName={cityName} />
         <div className="card_desc--wrapper">
           1 Some informationSome informationSome informationSome informationSome informationSome informationSome informationSome information
         </div>
