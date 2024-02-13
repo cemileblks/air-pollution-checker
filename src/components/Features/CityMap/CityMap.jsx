@@ -2,7 +2,8 @@ import React, { useEffect, useState } from 'react';
 import './CityMap.css';
 import maplibre from 'maplibre-gl';
 import Search from '../../pages/Search'
-import GetLatLong from '../GetLatLong/GetLatLong';
+import GetLatLong from '../GetLatLong';
+import GetAirQualityData from '../GetAirQualityData';
 
 function CityMap() {
     const [initialState, setInitialState] = useState({
@@ -25,14 +26,25 @@ function CityMap() {
             });
         }
 
-        const map = new maplibre.Map({
+        const mapInstance = new maplibre.Map({
             container: 'map-container',
             style: `${mapStyle}?apiKey=${myAPIKey}`,
             center: [lon, lat], // lon lat from user city search
             zoom: initialState.zoom
         });
 
-        setMap(map);
+        mapInstance.on('style.load', async () => {
+
+            try {
+                // Fetch air quality data
+                const airQualityData = await GetAirQualityData(lat, lon);
+
+            } catch (error) {
+                console.error('Error fetching air quality data:', error);
+            }
+        });
+
+        setMap(mapInstance);
     }
 
     //call to stat map from geoapify documentaion
