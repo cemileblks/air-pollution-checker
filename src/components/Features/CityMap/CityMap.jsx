@@ -5,6 +5,7 @@ import Search from '../../pages/Search'
 import GetLatLong from '../GetLatLong';
 import GetAirQualityData from '../GetAirQualityData';
 import GetCityPolygon from '../GetCityPolygon';
+import addColorLayer from '../AddColorLayer';
 
 function CityMap() {
     const [initialState, setInitialState] = useState({
@@ -35,6 +36,8 @@ function CityMap() {
             });
 
             mapInstance.on('style.load', async () => {
+                mapInstance.addControl(new maplibre.NavigationControl());
+
                 try {
                     // Fetch air quality data
                     const airQualityData = await GetAirQualityData(lat, lon);
