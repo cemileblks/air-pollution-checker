@@ -6,7 +6,7 @@ const GetLatLong = async (cityName) => {
     const { lat, lon } = response.data[0];
     return { lat, lon };
   } catch (error) {
-    console.error('Error fetching data:', error);
+    console.error('Error fetching lat and long for the city:', error);
     return null;
   }
 };

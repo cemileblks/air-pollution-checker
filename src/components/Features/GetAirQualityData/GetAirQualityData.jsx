@@ -7,7 +7,7 @@ const GetAirQualityData = async (lat, lon) => {
         console.log(response.data.list[0].main.aqi) // check to see if data is retrived corectly
         return {aqi: response.data.list[0].main.aqi}; // returns object key aqi equals a value from the API
       } catch (error) {
-        console.error('Error fetching data:', error);
+        console.error('Error fetching air quality data:', error);
         return null;
       }
 };
