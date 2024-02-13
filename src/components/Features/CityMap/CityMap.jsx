@@ -8,7 +8,7 @@ import GetAirQualityData from '../GetAirQualityData/GetAirQualityData';
 import GetCityPolygon from '../GetCityPolygon/GetCityPolygon';
 import addColorLayer from '../AddColorLayer/AddColorLayer';
 
-function CityMap() {
+function CityMap({ cityName }) {
     const [map, setMap] = useState(null);
     const [initialState, setInitialState] = useState({
         lng: -1.0724, //london
@@ -24,9 +24,9 @@ function CityMap() {
             const { lat, lon } = await GetLatLong(cityName);
             if (lat && lon) {
                 setInitialState({
-                    ...initialState,
                     lng: lon,
-                    lat: lat
+                    lat: lat,
+                    zoom: 15
                 });
             };
 
@@ -34,7 +34,7 @@ function CityMap() {
                 container: 'map-container',
                 style: `${mapStyle}?apiKey=${myAPIKey}`,
                 center: [lon, lat], // lon lat from user city search
-                zoom: initialState.zoom
+                zoom: 15
             });
 
             mapInstance.on('style.load', async () => {
@@ -64,15 +64,16 @@ function CityMap() {
     //call to stat map from geoapify documentaion
     useEffect(() => {
 
-        // inital placeholder city
-        initializeMap('London');
+        if (cityName) {
+            initializeMap(cityName);
+        }
 
         return () => {
             if (map) {
                 map.remove();
             }
         };
-    }, []);
+    }, [cityName]);
 
     const handleCitySearch = async (cityName) => {
         await initializeMap(cityName);
@@ -80,10 +81,11 @@ function CityMap() {
 
     return (
         <div>
-            <div className="map-wrapper">
-                <div className="map-container" id="map-container"></div>
-            </div>
-            <BoringSearchBox onCitySearch={handleCitySearch} />
+            {cityName && (
+                <div className="map-wrapper">
+                    <div className="map-container" id="map-container"></div>
+                </div>
+            )}
         </div>
     )
 

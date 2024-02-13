@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -8,13 +8,14 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Cities from "./components/pages/Cities";
 import About from "./components/pages/About";
-import Search from "./components/pages/Search";
+import SearchButton from "./components/pages/Search";
 import Category from "./components/pages/Category";
 import CityIndividual from "./components/pages/CityIndividual";
 import Breadcrumb from './components/pages/Breadcrumbs';
 
 // Features map component 
 import 'maplibre-gl/dist/maplibre-gl.css';
+import CityMap from './components/Features/CityMap/CityMap';
 
 const darkTheme = createTheme({
   palette: {
@@ -23,6 +24,12 @@ const darkTheme = createTheme({
 });
 
 function App() {
+  const [cityName, setCityName] = useState('');
+
+  const handleSearch = (city) => {
+    setCityName(city);
+  };
+
 
   return (
     <Router>
@@ -31,12 +38,14 @@ function App() {
       <Header />
       {/* Show only in the individual page */}
       <Breadcrumb />
-      <Search />
+      <SearchButton onSearch={handleSearch}/>
       <Category />
       <Routes>
         <Route path='/' element={<Cities />} />
         <Route path='/home' element={<Cities />} />
+        {/* <Route path='/city/:cityId' element={<CityMap cityName={cityName} />} /> */}
         <Route path='/city/:cityId' element={<CityIndividual />} />
+        {/* <Route path=`/city/${cityName}` element={<CityMap cityName={cityName} />} */}
         <Route path='/about' element={<About />}/>
       </Routes>
       <Footer />

@@ -1,106 +1,46 @@
-import React from "react";
+import React, { useState } from 'react';
+import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
-import Autocomplete, { createFilterOptions } from '@mui/material/Autocomplete';
-import InputAdornment from '@mui/material/InputAdornment';
-import SearchIcon from '@mui/icons-material/Search';
+import Button from '@mui/material/Button';
 
-const filter = createFilterOptions();
+function SearchButton({ onSearch }) {
+  const [cityName, setCityName] = useState('');
 
-function Search({ onCitySearch }){
-  const [value, setValue] = React.useState(null);
-
-  const handleSearch = () => {
-    console.log("handle search works")
-    if (value) {
-      onCitySearch(value.city);
-    }
+  const handleChange = (event) => {
+    setCityName(event.target.value.trim());
   };
 
   const handleKeyDown = (event) => {
-
     if (event.key === 'Enter') {
-      console.log("key-press enter works too")
       handleSearch();
     }
   };
 
+  const handleSearch = () => {
+    onSearch(cityName);
+  };
+
   return (
     <div className="search_bar--container">
-      <Autocomplete
-        onChange={(event, newValue) => {
-          if (typeof newValue === 'string') {
-            setValue({
-              city: newValue,
-            });
-          } else if (newValue && newValue.inputValue) {
-            // Create a new value from the user input
-            setValue({
-              city: newValue.inputValue,
-            });
-          } else {
-            setValue(newValue);
-          }
+      <Box
+        sx={{
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          '& > :not(style)': { m: 1 },
         }}
-        filterOptions={(options, params) => {
-          const filtered = filter(options, params);
-
-          const { inputValue } = params;
-          // Suggest the creation of a new value
-          const isExisting = options.some((option) => inputValue === option.city);
-          if (inputValue !== '' && !isExisting) {
-            filtered.push({
-              inputValue,
-              city: `Add "${inputValue}"`,
-            });
-          }
-
-
-          return filtered;
-        }}
-        selectOnFocus
-        clearOnBlur
-        handleHomeEndKeys
-        id="search-city"
-        options={cityNames}
-        getOptionLabel={(option) => {
-          // Value selected with enter, right from the input
-          if (typeof option === 'string') {
-            return option;
-          }
-          // Add "xxx" option created dynamically
-          if (option.inputValue) {
-            return option.inputValue;
-          }
-          // Regular option
-          return option.city;
-        }}
-        renderOption={(props, option) => <li {...props}>{option.city}</li>}
-        sx={{ width: 300}}
-        className={'search_bar--inner'}
-        renderInput={(params) => (
-          <TextField {...params}
-          label="Type a city name"
-          sx={{
-            '.MuiOutlinedInput-root': {
-              paddingRight: '15px !important'
-            }
-            }}
-          InputProps={{
-            ...params.InputProps,
-            endAdornment: (
-              <InputAdornment position="end">
-                <SearchIcon onClick={handleSearch}/>
-              </InputAdornment>
-            ),
-          }} 
-          onKeyDown={handleKeyDown}/>
-        )}
-      />
+      >
+        <TextField
+          helperText=" "
+          id="demo-helper-text-aligned-no-helper"
+          label="Name"
+          onChange={handleChange}
+          onKeyDown={handleKeyDown}
+        />
+        <Button variant="contained" onClick={handleSearch}>Search</Button>
+      </Box>
     </div>
-  )
+  );
 }
 
-const cityNames = [
-  { city: 'London', country: 'UK' } // getting error when trying to add new city 
-]
-export default Search;
+export default SearchButton;
