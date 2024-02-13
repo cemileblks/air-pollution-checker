@@ -47,7 +47,10 @@ function CityMap() {
     }
 
     return (
-        <div className="map-container" ref={el => mapContainer = el}>
+        <div>
+            <div className="map-wrapper">
+                <div className="map-container" id="map-container"></div>
+            </div>
             <Search onCitySearch={handleCitySearch} />
         </div>
     )
