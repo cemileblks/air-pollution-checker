@@ -8,7 +8,7 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Cities from "./components/pages/Cities";
 import About from "./components/pages/About";
-import Search from "./components/pages/Search";
+import SearchButton from "./components/pages/Search";
 import Category from "./components/pages/Category";
 import CityIndividual from "./components/pages/CityIndividual";
 import Breadcrumb from './components/pages/Breadcrumbs';
@@ -28,7 +28,7 @@ function App() {
       <Header />
       {/* Show only in the individual page */}
       <Breadcrumb />
-      <Search />
+      <SearchButton />
       <Category />
       <Routes>
         <Route path='/' element={<Cities />} />
