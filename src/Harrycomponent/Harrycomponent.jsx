@@ -1,12 +1,22 @@
 import { useState, useEffect } from "react";
 import { format } from "date-fns"; // Importing the format function from date-fns
+import { BarChart } from "@mui/x-charts/BarChart";
 
 export default function Harrycomponent() {
   const [location, setLocation] = useState("");
+  const [pollution, setPollution] = useState({});
+  const handleSubmit = async (e) => {
+    try {
+      e.preventDefault();
+      var requestOptions = {
+        method: "GET",
+        redirect: "follow",
+      };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setLocation(e.target[0].value);
+      setLocation(e.target[0].value);
+    } catch (err) {
+      console.log(err);
+    }
   };
 
   useEffect(() => {
@@ -38,13 +48,14 @@ export default function Harrycomponent() {
             .then((response) => response.json())
             .then((result) => {
               // Date formatting code starts here
-              var date = new Date("2016-01-04 10:34:23");
+              var date = new Date();
               var formattedDate = format(date, "MMMM do, yyyy H:mma");
               console.log(formattedDate);
               // Date formatting code ends here
 
               console.log(result);
-              console.log(result.list[0].components);
+              console.log(Object.values(result.list[0].components));
+              setPollution(result.list[0].components);
             })
             .catch((error) => console.log("error", error));
         })
@@ -53,10 +64,25 @@ export default function Harrycomponent() {
   }, [location]);
 
   return (
-    <form onSubmit={handleSubmit}>
-      <input name="query" />
-      <button type="submit">Search</button>
-    </form>
+    <div>
+      <form onSubmit={handleSubmit}>
+        <input name="query" />
+        <button type="submit">Search</button>
+      </form>
+      <div>
+        <BarChart
+          series={[
+            { data: [35, 44, 24, 34] },
+            { data: [51, 6, 49, 30] },
+            { data: [15, 25, 30, 50] },
+            { data: [60, 50, 15, 25] },
+          ]}
+          height={290}
+          xAxis={[{ data: ["2/13/24", "Q2", "Q3", "Q4"], scaleType: "band" }]}
+          margin={{ top: 10, bottom: 30, left: 40, right: 10 }}
+        />
+      </div>
+    </div>
   );
 }
 //Get location information from the user -
