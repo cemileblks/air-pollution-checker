@@ -1,32 +1,55 @@
 import React, { useEffect, useState } from 'react';
 import './CityMap.css';
 import maplibre from 'maplibre-gl';
+import Search from '../../pages/Search'
+import GetLatLong from '../GetLatLong/GetLatLong';
 
 function CityMap() {
-    let mapContainer;
+    const [initialState, setInitialState] = useState({
+        lng: -1.0724, //london
+        lat: 53.9920,
+        zoom: 15,
+    })
 
-    useEffect(() => {
-      const myAPIKey = 'YOUR_API_KEY_HERE'; 
-      const mapStyle = 'https://maps.geoapify.com/v1/styles/osm-carto/style.json';
-  
-      const initialState = {
-        lng: 11,
-        lat: 49,
-        zoom: 4
-      };
-  
-      const map = new maplibre.Map({
-        container: mapContainer,
-        style: `${mapStyle}?apiKey=${myAPIKey}`,
-        center: [initialState.lng, initialState.lat],
-        zoom: initialState.zoom
+    // Function to initalize map to be later called in useEffect hook
+    const initializeMap = async (cityName) => {
+        const myAPIKey = 'bc942683c0154ef7af35b4b812414db5';
+        const mapStyle = 'https://maps.geoapify.com/v1/styles/maptiler-3d/style.json';
+
+        const { lat, lon } = await GetLatLong(cityName);
+        if (lat && lon) {
+            setInitialState({
+                ...initialState,
+                lng: lon,
+                lat: lat
+            });
+        }
+
+        const map = new maplibre.Map({
+            container: 'map-container',
+            style: `${mapStyle}?apiKey=${myAPIKey}`,
+            center: [lon, lat], // lon lat from user city search
+            zoom: initialState.zoom
         });
-  
-    }, [mapContainer]);
-  
+
+        setMap(map);
+    }
+
+    //call to stat map from geoapify documentaion
+    useEffect(() => {
+        // some inital placeholder city
+        initializeMap('London');
+
+    }, []);
+
+    const handleCitySearch = async (cityName) => {
+        await initializeMap(cityName);
+    }
+
     return (
-      <div className="map-container" ref={el => mapContainer = el}>
-      </div>
+        <div className="map-container" ref={el => mapContainer = el}>
+            <Search onCitySearch={handleCitySearch} />
+        </div>
     )
 
 
