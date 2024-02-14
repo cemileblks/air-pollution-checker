@@ -11,6 +11,9 @@ import CardMedia from '@mui/material/CardMedia';
 // Creating hover theme globally
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 
+// City pictures
+import CityPhotoSearch from './CityPhotoSearch'
+
 const themedCard = createTheme({
   components: {
     MuiCard:{
@@ -90,37 +93,40 @@ const cityData = [
   }
 ]
 
-function Cities(){
-  return (
-    <Container sx={{display: 'flex'}}className={'card--container'}>
-      <ThemeProvider theme={themedCard}>
-      {cityData.map((city)=>(
+class Cities extends React.Component{
+  render(){
+    return (
+      <Container sx={{display: 'flex'}}className={'card--container'}>
+        <CityPhotoSearch data={cityData} />
+        <ThemeProvider theme={themedCard}>
+        {cityData.map((city)=>(
           <Link to={`/city/${city.id}`} key={city.id}>
-            <Card sx={{ width: 315 }}>
-              <React.Fragment>
-                <CardMedia
-                  component="img"
-                  alt="green iguana"
-                  height="300"
-                  image={city.imgUrl}
-                  />
-                <CardContent>
-                  <Typography gutterBottom variant="h5" component="div" sx={{textAlign: 'left', color: '#ffffff'}}>
-                    {city.cityName}
-                  </Typography>
-                  <Typography variant="body2" sx={{textAlign: 'left'}}>
-                    {city.desc}
-                  </Typography>
-                  <Typography variant="body2" sx={{textAlign: 'left'}}>
-                    Some pollution Number
-                  </Typography>
-                </CardContent>
-                </React.Fragment>
-              </Card>
-          </Link>
-        ))}
-        </ThemeProvider>
-    </Container>
-  )
+              <Card sx={{ width: 315 }}>
+                <React.Fragment>
+                  <CardMedia
+                    component="img"
+                    alt="green iguana"
+                    height="300"
+                    image={city.imgUrl}
+                    />
+                  <CardContent>
+                    <Typography gutterBottom variant="h5" component="div" sx={{textAlign: 'left', color: '#ffffff'}}>
+                      {city.cityName}
+                    </Typography>
+                    <Typography variant="body2" sx={{textAlign: 'left'}}>
+                      {city.desc}
+                    </Typography>
+                    <Typography variant="body2" sx={{textAlign: 'left'}}>
+                      Some pollution Number
+                    </Typography>
+                  </CardContent>
+                  </React.Fragment>
+                </Card>
+            </Link>
+          ))}
+          </ThemeProvider>
+      </Container>
+    )
+  }
 }
 export default Cities;
