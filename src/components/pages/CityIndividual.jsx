@@ -1,7 +1,8 @@
-import React, {useState} from 'react';
-import { useParams } from 'react-router-dom';
-import CityMap from '../Features/CityMap/CityMap';
-import SearchResult from './SearchResult';
+import React, { useState } from "react";
+import { useParams } from "react-router-dom";
+import CityMap from "../Features/CityMap/CityMap";
+import SearchResult from "./SearchResult";
+import Actions from "../Features/Actions";
 
 function CityIndividual() {
   const { cityName } = useParams();
@@ -12,21 +13,21 @@ function CityIndividual() {
       <section className="section--container" id="cityIndividual">
         <SearchResult cityName={cityName} />
         <CityMap cityName={cityName} />
-        <div className="card_desc--wrapper">
-          1 Some informationSome informationSome informationSome informationSome informationSome informationSome informationSome information
-        </div>
+        <div className="card_desc--wrapper">{Actions(2)}</div>
         <div className="card_image--wrapper">
-          <img src='/images/sample/img_card02.png' alt='' />
+          <img src="/images/sample/img_card02.png" alt="" />
         </div>
         <div className="card_desc--wrapper">
-          2 Some informationSome informationSome informationSome informationSome informationSome informationSome informationSome information
+          2 Some informationSome informationSome informationSome informationSome
+          informationSome informationSome informationSome information
         </div>
         <div className="card_desc--wrapper">
-          2 Some informationSome informationSome informationSome informationSome informationSome informationSome informationSome information
+          2 Some informationSome informationSome informationSome informationSome
+          informationSome informationSome informationSome information
         </div>
       </section>
     </>
-  )
+  );
 }
 
-export default CityIndividual
+export default CityIndividual;

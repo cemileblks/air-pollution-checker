@@ -1,7 +1,6 @@
 import actionsData from "../../assets/data/quality.json";
 
 function Actions(index = 0) {
-
   return (
     <>
       <div>
