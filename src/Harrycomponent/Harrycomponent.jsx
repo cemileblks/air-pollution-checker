@@ -1,12 +1,14 @@
 import { useState, useEffect, Component } from "react";
-import { format } from "date-fns"; // Importing the format function from date-fns
+//import { format } from "date-fns"; // Importing the format function from date-fns
 import { BarChart } from "@mui/x-charts/BarChart";
 import moment from "moment";
+import { useParams } from "react-router-dom";
 
 export default function Harrycomponent() {
+  const { cityName } = useParams();
   const currentDate = moment().unix();
   const startDate = moment().subtract(2, "days").unix();
-  const [location, setLocation] = useState("");
+  const [location, setLocation] = useState(() => cityName);
   const [pollution, setPollution] = useState(null); // Initialize pollution as null initially
   const [labels, setLabels] = useState([]);
   const [coDataApi, setcoDataApi] = useState([]);
@@ -53,10 +55,10 @@ export default function Harrycomponent() {
   //console.log(coDataApi);
   return (
     <div>
-      <form onSubmit={handleSubmit}>
+      {/* <form onSubmit={handleSubmit}>
         <input name="query" />
         <button type="submit">Search</button>
-      </form>
+      </form> */}
       <div>
         {pollution && ( // Render BarChart only when pollution data is available
           <BarChart
