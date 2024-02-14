@@ -1,5 +1,3 @@
-
-
 const Status = () => {
     return (  
         <div>
