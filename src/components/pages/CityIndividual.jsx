@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import CityMap from "../Features/CityMap/CityMap";
 import SearchResult from "./SearchResult";
-import Harrycomponent from "../../Harrycomponent/Harrycomponent";
 
 function CityIndividual() {
   const { cityName } = useParams();
