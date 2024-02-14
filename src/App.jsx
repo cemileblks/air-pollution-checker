@@ -10,6 +10,8 @@ import Cities from "./components/pages/Cities";
 import About from "./components/pages/About";
 import SearchButton from "./components/pages/Search";
 import Category from "./components/pages/Category";
+import SearchCity from './components/pages/SearchResult';
+import Status from "./Status";
 import CityIndividual from "./components/pages/CityIndividual";
 import Breadcrumb from './components/pages/Breadcrumbs';
 
@@ -52,5 +54,7 @@ function App() {
     </Router>
   )
 }
+
+
 
 export default App

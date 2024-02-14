@@ -1,5 +1,5 @@
 import React from "react";
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 import CityMap from "../Features/CityMap/CityMap";
 
 // Mui
@@ -20,7 +20,7 @@ import RankingWorst from '../../assets/data/worstCities.json'
 
 const themedCard = createTheme({
   components: {
-    MuiCard:{
+    MuiCard: {
       styleOverrides: {
         root: {
           transition: 'transform 0.3s ease-in-out, opacity 0.3s ease-in-out',
@@ -33,18 +33,18 @@ const themedCard = createTheme({
         }
       }
     },
-    MuiCardContent:{
+    MuiCardContent: {
       styleOverrides: {
         root: {
           background: '#303947',
         }
-    }},
-    MuiTypography:{
+      }},
+    MuiTypography: {
       styleOverrides: {
         root: {
           color: '#a1a1a1'
         }
-    }},
+      }},
     MuiCssBaseline: {
       styleOverrides: {
         body: {
