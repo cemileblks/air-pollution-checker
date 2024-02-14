@@ -41,7 +41,7 @@ function SearchButton({ onSearch }) {
         <TextField
           helperText=" "
           id="demo-helper-text-aligned-no-helper"
-          label="Name"
+          label="Type your city name"
           onChange={handleChange}
           onKeyDown={handleKeyDown}
         />
