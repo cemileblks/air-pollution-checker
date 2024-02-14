@@ -37,16 +37,13 @@ function CityIndividual() {
             </div>
           )}
         </div>
-        <div className="card_image--wrapper">
-          <img src="/images/sample/img_card02.png" alt="" />
-        </div>
-        <div className="card_desc--wrapper">
-          2 Some informationSome informationSome informationSome informationSome
-          informationSome informationSome informationSome information
-        </div>
-        <div className="card_desc--wrapper">
-          2 Some informationSome informationSome informationSome informationSome
-          informationSome informationSome informationSome information
+        <div className="card_desc--wrapper" style={{ marginTop: "20px" }}>
+          Our chart visually represents comprehensive air pollution data for the
+          selected country. It provides insights into various pollutants such as
+          carbon monoxide (CO), ozone (O3), and others, offering a clear
+          snapshot of the air quality situation. You can easily grasp the levels
+          of different pollutants, aiding in understanding environmental
+          conditions and make informed decision-making for health and well-being
         </div>
         <Harrycomponent />
       </section>
