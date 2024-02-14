@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import './CityMap.css';
 import maplibre from 'maplibre-gl';
 // import Search from '../../pages/Search'
-import BoringSearchBox from '../../pages/BoringSearchBox';
 import GetLatLong from '../GetLatLong/GetLatLong';
 import GetAirQualityData from '../GetAirQualityData/GetAirQualityData';
 import GetCityPolygon from '../GetCityPolygon/GetCityPolygon';
@@ -26,7 +25,7 @@ function CityMap({ cityName }) {
                 setInitialState({
                     lng: lon,
                     lat: lat,
-                    zoom: 15
+                    zoom: 10
                 });
             };
 
@@ -34,7 +33,7 @@ function CityMap({ cityName }) {
                 container: 'map-container',
                 style: `${mapStyle}?apiKey=${myAPIKey}`,
                 center: [lon, lat], // lon lat from user city search
-                zoom: 15
+                zoom: 10
             });
 
             mapInstance.on('style.load', async () => {
@@ -75,9 +74,6 @@ function CityMap({ cityName }) {
         };
     }, [cityName]);
 
-    const handleCitySearch = async (cityName) => {
-        await initializeMap(cityName);
-    }
 
     return (
         <div>
