@@ -6,13 +6,16 @@ import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
 
 // Creating hover theme globally
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 
 // City pictures
 import CityPhotoSearch from './CityPhotoSearch'
+
+// Ranking Data
+import RankingBest from '../../assets/data/bestCities.json'
+import RankingWorst from '../../assets/data/worstCities.json'
 
 const themedCard = createTheme({
   components: {
@@ -54,70 +57,61 @@ const themedCard = createTheme({
   }
 })
 
-const cityData = [
-  {
-    id: 1,
-    cityName: 'London',
-    desc: 'Some pollution Number',
-    imgUrl: '/images/sample/img_card01.png',
-  },
-  {
-    id: 2,
-    cityName: 'Tokyo',
-    desc: 'Some pollution Number',
-    imgUrl: '/images/sample/img_card02.png',
-  },
-  {
-    id: 3,
-    cityName: 'Paris',
-    desc: 'Some pollution Number',
-    imgUrl: '/images/sample/img_card03.png',
-  },
-  {
-    id: 4,
-    cityName: 'Rome',
-    desc: 'Some pollution Number',
-    imgUrl: '/images/sample/img_card03.png',
-  },
-  {
-    id: 5,
-    cityName: 'Beijin',
-    desc: 'Some pollution Number',
-    imgUrl: '/images/sample/img_card02.png',
-  },
-  {
-    id: 6,
-    cityName: 'Seoul',
-    desc: 'Some pollution Number',
-    imgUrl: '/images/sample/img_card01.png',
-  }
-]
 
 class Cities extends React.Component{
   render(){
     return (
+      <>
+      <h2 className='city_ranking--header'>The cleanest cities</h2>
       <Container sx={{display: 'flex'}}className={'card--container'}>
-        <CityPhotoSearch data={cityData} />
         <ThemeProvider theme={themedCard}>
-        {cityData.map((city)=>(
+        {RankingBest.map((city, index)=>
+          index < 1 &&(
+          <Link to={`/city/${city.Rank}`} key={city.Rank}>
+              <Card sx={{ width: 315 }}>
+                <React.Fragment>
+                  <CityPhotoSearch data={RankingBest} />
+                  <CardContent>
+                    <Typography gutterBottom variant="h5" component="div" sx={{textAlign: 'left', color: '#ffffff'}}>
+                    {city.Rank}: {city.cityCountry}
+                    </Typography>
+                    <Typography variant="body2" sx={{textAlign: 'left'}}>
+                      AQI SCORE: {city.AQI_US}
+                    </Typography>
+                    {/* <Typography variant="body2" sx={{textAlign: 'left'}}>
+                      Some pollution Number
+                    </Typography> */}
+                  </CardContent>
+                  </React.Fragment>
+                </Card>
+            </Link>
+          ))}
+          </ThemeProvider>
+      </Container>
+      <h2 className='city_ranking--header'>Most polluted cities</h2>
+      <Container sx={{display: 'flex'}}className={'card--container'}>
+        <ThemeProvider theme={themedCard}>
+        {RankingWorst.map((city, index)=>
+          index < 1 && (
           <Link to={`/city/${city.id}`} key={city.id}>
               <Card sx={{ width: 315 }}>
                 <React.Fragment>
-                  <CardMedia
+                  <CityPhotoSearch data={RankingWorst} />
+                  {/* <CardMedia
                     component="img"
                     alt="green iguana"
                     height="300"
                     image={city.imgUrl}
-                    />
+                    /> */}
                   <CardContent>
                     <Typography gutterBottom variant="h5" component="div" sx={{textAlign: 'left', color: '#ffffff'}}>
-                      {city.cityName}
+                    {city.Rank}: {city.cityCountry}
                     </Typography>
                     <Typography variant="body2" sx={{textAlign: 'left'}}>
                       {city.desc}
                     </Typography>
                     <Typography variant="body2" sx={{textAlign: 'left'}}>
-                      Some pollution Number
+                      AQI SCORE: {city.AQI_US}
                     </Typography>
                   </CardContent>
                   </React.Fragment>
@@ -126,6 +120,7 @@ class Cities extends React.Component{
           ))}
           </ThemeProvider>
       </Container>
+      </>
     )
   }
 }

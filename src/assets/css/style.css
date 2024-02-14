@@ -52,6 +52,14 @@ body {
 	margin: 50px;
 }
 
+.city_ranking--header {
+	text-align: center;
+	margin: 50px 35px;
+	font-size: 34px;
+	padding-bottom: 25px;
+	border-bottom: 1px solid var(--white);
+}
+
 /* cityIndividual */
 #cityIndividual {
 	display: grid;
