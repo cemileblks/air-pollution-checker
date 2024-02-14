@@ -1,0 +1,302 @@
+[
+  {
+    "Rank": 1,
+    "cityCountry": "Dhaka, Bangladesh",
+    "AQI_US": 288,
+    "label": "dirty"
+  },
+  {
+    "Rank": 2,
+    "cityCountry": "Delhi, India",
+    "AQI_US": 255,
+    "label": "dirty"
+  },
+  {
+    "Rank": 3,
+    "cityCountry": "Lahore, Pakistan",
+    "AQI_US": 217,
+    "label": "dirty"
+  },
+  {
+    "Rank": 4,
+    "cityCountry": "Mumbai, India",
+    "AQI_US": 214,
+    "label": "dirty"
+  },
+  {
+    "Rank": 5,
+    "cityCountry": "Karachi, Pakistan",
+    "AQI_US": 189,
+    "label": "dirty"
+  },
+  {
+    "Rank": 6,
+    "cityCountry": "Kolkata, India",
+    "AQI_US": 185,
+    "label": "dirty"
+  },
+  {
+    "Rank": 7,
+    "cityCountry": "Bangkok, Thailand",
+    "AQI_US": 175,
+    "label": "dirty"
+  },
+  {
+    "Rank": 8,
+    "cityCountry": "Kuwait City, Kuwait",
+    "AQI_US": 174,
+    "label": "dirty"
+  },
+  {
+    "Rank": 9,
+    "cityCountry": "Chengdu, China",
+    "AQI_US": 163,
+    "label": "dirty"
+  },
+  {
+    "Rank": 10,
+    "cityCountry": "Yangon, Myanmar",
+    "AQI_US": 162,
+    "label": "dirty"
+  },
+  {
+    "Rank": 11,
+    "cityCountry": "Kathmandu, Nepal",
+    "AQI_US": 159,
+    "label": "dirty"
+  },
+  {
+    "Rank": 12,
+    "cityCountry": "Kabul, Afghanistan",
+    "AQI_US": 152,
+    "label": "dirty"
+  },
+  {
+    "Rank": 13,
+    "cityCountry": "Ulaanbaatar, Mongolia",
+    "AQI_US": 152,
+    "label": "dirty"
+  },
+  {
+    "Rank": 14,
+    "cityCountry": "Doha, Qatar",
+    "AQI_US": 140,
+    "label": "dirty"
+  },
+  {
+    "Rank": 15,
+    "cityCountry": "Tehran, Iran",
+    "AQI_US": 134,
+    "label": "dirty"
+  },
+  {
+    "Rank": 16,
+    "cityCountry": "Baghdad, Iraq",
+    "AQI_US": 128,
+    "label": "dirty"
+  },
+  {
+    "Rank": 17,
+    "cityCountry": "Chongqing, China",
+    "AQI_US": 127,
+    "label": "dirty"
+  },
+  {
+    "Rank": 18,
+    "cityCountry": "Accra, Ghana",
+    "AQI_US": 122,
+    "label": "dirty"
+  },
+  {
+    "Rank": 19,
+    "cityCountry": "Chiang Mai, Thailand",
+    "AQI_US": 118,
+    "label": "dirty"
+  },
+  {
+    "Rank": 20,
+    "cityCountry": "Shanghai, China",
+    "AQI_US": 110,
+    "label": "dirty"
+  },
+  {
+    "Rank": 21,
+    "cityCountry": "Guangzhou, China",
+    "AQI_US": 105,
+    "label": "dirty"
+  },
+  {
+    "Rank": 22,
+    "cityCountry": "Seoul, South Korea",
+    "AQI_US": 105,
+    "label": "dirty"
+  },
+  {
+    "Rank": 23,
+    "cityCountry": "Osaka, Japan",
+    "AQI_US": 97,
+    "label": "dirty"
+  },
+  {
+    "Rank": 24,
+    "cityCountry": "Wuhan, China",
+    "AQI_US": 97,
+    "label": "dirty"
+  },
+  {
+    "Rank": 25,
+    "cityCountry": "Hanoi, Vietnam",
+    "AQI_US": 96,
+    "label": "dirty"
+  },
+  {
+    "Rank": 26,
+    "cityCountry": "Wroclaw, Poland",
+    "AQI_US": 89,
+    "label": "dirty"
+  },
+  {
+    "Rank": 27,
+    "cityCountry": "Riyadh, Saudi Arabia",
+    "AQI_US": 88,
+    "label": "dirty"
+  },
+  {
+    "Rank": 28,
+    "cityCountry": "Kobe, Japan",
+    "AQI_US": 84,
+    "label": "dirty"
+  },
+  {
+    "Rank": 29,
+    "cityCountry": "Kampala, Uganda",
+    "AQI_US": 80,
+    "label": "dirty"
+  },
+  {
+    "Rank": 30,
+    "cityCountry": "Shenzhen, China",
+    "AQI_US": 78,
+    "label": "dirty"
+  },
+  {
+    "Rank": 31,
+    "cityCountry": "Milano, Italy",
+    "AQI_US": 77,
+    "label": "dirty"
+  },
+  {
+    "Rank": 32,
+    "cityCountry": "Phnom Penh, Cambodia",
+    "AQI_US": 76,
+    "label": "dirty"
+  },
+  {
+    "Rank": 33,
+    "cityCountry": "Hong Kong, Hong Kong SAR",
+    "AQI_US": 73,
+    "label": "dirty"
+  },
+  {
+    "Rank": 34,
+    "cityCountry": "Incheon, South Korea",
+    "AQI_US": 73,
+    "label": "dirty"
+  },
+  {
+    "Rank": 35,
+    "cityCountry": "Tel Aviv-Yafo, Israel",
+    "AQI_US": 71,
+    "label": "dirty"
+  },
+  {
+    "Rank": 36,
+    "cityCountry": "Nagoya, Japan",
+    "AQI_US": 71,
+    "label": "dirty"
+  },
+  {
+    "Rank": 37,
+    "cityCountry": "Poznan, Poland",
+    "AQI_US": 70,
+    "label": "dirty"
+  },
+  {
+    "Rank": 38,
+    "cityCountry": "Krakow, Poland",
+    "AQI_US": 70,
+    "label": "dirty"
+  },
+  {
+    "Rank": 39,
+    "cityCountry": "Hangzhou, China",
+    "AQI_US": 70,
+    "label": "dirty"
+  },
+  {
+    "Rank": 40,
+    "cityCountry": "Sarajevo, Bosnia Herzegovina",
+    "AQI_US": 70,
+    "label": "dirty"
+  },
+  {
+    "Rank": 41,
+    "cityCountry": "Bishkek, Kyrgyzstan",
+    "AQI_US": 70,
+    "label": "dirty"
+  },
+  {
+    "Rank": 42,
+    "cityCountry": "Kyoto, Japan",
+    "AQI_US": 70,
+    "label": "dirty"
+  },
+  {
+    "Rank": 43,
+    "cityCountry": "Busan, South Korea",
+    "AQI_US": 70,
+    "label": "dirty"
+  },
+  {
+    "Rank": 44,
+    "cityCountry": "Lima, Peru",
+    "AQI_US": 65,
+    "label": "dirty"
+  },
+  {
+    "Rank": 45,
+    "cityCountry": "Istanbul, Turkey",
+    "AQI_US": 63,
+    "label": "dirty"
+  },
+  {
+    "Rank": 46,
+    "cityCountry": "Lyon, France",
+    "AQI_US": 61,
+    "label": "dirty"
+  },
+  {
+    "Rank": 47,
+    "cityCountry": "Tokyo, Japan",
+    "AQI_US": 61,
+    "label": "dirty"
+  },
+  {
+    "Rank": 48,
+    "cityCountry": "Jakarta, Indonesia",
+    "AQI_US": 60,
+    "label": "dirty"
+  },
+  {
+    "Rank": 49,
+    "cityCountry": "Jerusalem, Israel",
+    "AQI_US": 59,
+    "label": "dirty"
+  },
+  {
+    "Rank": 50,
+    "cityCountry": "Prague, Czech Republic",
+    "AQI_US": 59,
+    "label": "dirty"
+  }
+]
