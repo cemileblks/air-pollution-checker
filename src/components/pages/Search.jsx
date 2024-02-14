@@ -2,10 +2,12 @@ import React, { useState } from 'react';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
+import { useNavigate } from 'react-router-dom';
 
 
 function SearchButton({ onSearch }) {
   const [cityName, setCityName] = useState('');
+  const navigate = useNavigate();
 
 
   const handleChange = (event) => {
@@ -22,6 +24,7 @@ function SearchButton({ onSearch }) {
 
   const handleSearch = () => {
     onSearch(cityName);
+    navigate(`/city/${cityName}`); // navigate to city page on search
   };
 
 

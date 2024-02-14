@@ -1,5 +1,6 @@
 import React from "react";
 import {Link} from "react-router-dom";
+import CityMap from "../Features/CityMap/CityMap";
 
 // Mui
 import Container from '@mui/material/Container';
@@ -95,7 +96,7 @@ function Cities(){
     <Container sx={{display: 'flex'}}className={'card--container'}>
       <ThemeProvider theme={themedCard}>
       {cityData.map((city)=>(
-          <Link to={`/city/${city.id}`} key={city.id}>
+          <Link to={`/city/${city.cityName}`} key={city.cityName}>
             <Card sx={{ width: 315 }}>
               <React.Fragment>
                 <CardMedia
