@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import { useParams } from 'react-router-dom';
 import CityMap from '../Features/CityMap/CityMap';
+import SearchResult from './SearchResult';
 
 function CityIndividual() {
   const { cityName } = useParams();
@@ -9,6 +10,7 @@ function CityIndividual() {
     <>
       City: {cityName}
       <section className="section--container" id="cityIndividual">
+        <SearchResult cityName={cityName} />
         <CityMap cityName={cityName} />
         <div className="card_desc--wrapper">
           1 Some informationSome informationSome informationSome informationSome informationSome informationSome informationSome information

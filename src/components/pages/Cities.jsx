@@ -1,5 +1,5 @@
 import React from "react";
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 import CityMap from "../Features/CityMap/CityMap";
 
 // Mui
@@ -14,7 +14,7 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 
 const themedCard = createTheme({
   components: {
-    MuiCard:{
+    MuiCard: {
       styleOverrides: {
         root: {
           transition: 'transform 0.3s ease-in-out, opacity 0.3s ease-in-out',
@@ -27,18 +27,18 @@ const themedCard = createTheme({
         }
       }
     },
-    MuiCardContent:{
+    MuiCardContent: {
       styleOverrides: {
         root: {
           background: '#303947',
         }
-    }},
-    MuiTypography:{
+      }},
+    MuiTypography: {
       styleOverrides: {
         root: {
           color: '#a1a1a1'
         }
-    }},
+      }},
     MuiCssBaseline: {
       styleOverrides: {
         body: {
@@ -91,36 +91,36 @@ const cityData = [
   }
 ]
 
-function Cities(){
+function Cities() {
   return (
-    <Container sx={{display: 'flex'}}className={'card--container'}>
+    <Container sx={{ display: 'flex' }} className={'card--container'}>
       <ThemeProvider theme={themedCard}>
-      {cityData.map((city)=>(
-          <Link to={`/city/${city.cityName}`} key={city.cityName}>
-            <Card sx={{ width: 315 }}>
-              <React.Fragment>
-                <CardMedia
-                  component="img"
-                  alt="green iguana"
-                  height="300"
-                  image={city.imgUrl}
-                  />
-                <CardContent>
-                  <Typography gutterBottom variant="h5" component="div" sx={{textAlign: 'left', color: '#ffffff'}}>
-                    {city.cityName}
-                  </Typography>
-                  <Typography variant="body2" sx={{textAlign: 'left'}}>
-                    {city.desc}
-                  </Typography>
-                  <Typography variant="body2" sx={{textAlign: 'left'}}>
-                    Some pollution Number
-                  </Typography>
-                </CardContent>
-                </React.Fragment>
-              </Card>
-          </Link>
-        ))}
-        </ThemeProvider>
+        {cityData.map((city) => (
+              <Link to={`/city/${city.cityName}`} key={city.cityName}>
+                <Card sx={{ width: 315 }}>
+                  <React.Fragment>
+                    <CardMedia
+                      component="img"
+                      alt="green iguana"
+                      height="300"
+                      image={city.imgUrl}
+                    />
+                    <CardContent>
+                      <Typography gutterBottom variant="h5" component="div" sx={{ textAlign: 'left', color: '#ffffff' }}>
+                        {city.cityName}
+                      </Typography>
+                      <Typography variant="body2" sx={{ textAlign: 'left' }}>
+                        {city.desc}
+                      </Typography>
+                      <Typography variant="body2" sx={{ textAlign: 'left' }}>
+                        Some pollution Number
+                      </Typography>
+                    </CardContent>
+                  </React.Fragment>
+                </Card>
+              </Link>
+            ))}
+          </ThemeProvider>
     </Container>
   )
 }
