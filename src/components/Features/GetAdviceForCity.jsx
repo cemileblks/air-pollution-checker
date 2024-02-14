@@ -15,14 +15,22 @@ const getAdviceForCity = async (cityName) => {
     if (!airQualityData) {
       throw new Error("Failed to fetch air quality data");
     }
+    // Find advice corresponding to air quality level
+    const selectedAdvice = quality.find(
+      (item) => item.value === airQualityData.aqi
+    );
+    if (!selectedAdvice) {
+      throw new Error("No advice found for the given air quality level");
+    }
+    // Return JSX with advice for at-risk persons, general population, andchallenge;
     return (
       <div>
         <h2>At-Risk Persons:</h2>
-        <p></p>
+        <p>{selectedAdvice.at_risk_persons}</p>
         <h2>General Population:</h2>
-        <p></p>
+        <p>{selectedAdvice.general_population}</p>
         <h2>Challenge:</h2>
-        <p></p>
+        <p>{selectedAdvice.challenge}</p>
       </div>
     );
   } catch (error) {
