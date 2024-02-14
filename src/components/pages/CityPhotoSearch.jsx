@@ -31,7 +31,7 @@ async function fetchCityImage(cityName){
     // Checking if the data is a day old or not
     const SAVED_DURATION = 1000 * 86400;
     if(new Date().getTime() - timestamp < SAVED_DURATION){
-      console.log(`Retrieving cached image for ${cityName}`);
+      // console.log(`Retrieving cached image for ${cityName}`);
       return imageUrl;
     }
   }

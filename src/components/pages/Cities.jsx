@@ -67,7 +67,7 @@ class Cities extends React.Component{
         <ThemeProvider theme={themedCard}>
         {RankingBest.map((city, index)=>
           index < 5 &&(
-          <Link to={`/city/${city.Rank}`} key={city.Rank}>
+          <Link to={`/city/${city.cityCountry}`} key={city.cityCountry}>
               <Card sx={{ width: 315 }}>
                 <React.Fragment>
                   <CityPhotoSearch cityName={city.cityCountry} />
@@ -90,7 +90,7 @@ class Cities extends React.Component{
         <ThemeProvider theme={themedCard}>
         {RankingWorst.map((city, index)=>
           index < 5 && (
-          <Link to={`/city/${city.id}`} key={city.id}>
+          <Link to={`/city/${city.cityCountry}`} key={city.cityCountry}>
               <Card sx={{ width: 315 }}>
                 <React.Fragment>
                   <CityPhotoSearch cityName={city.cityCountry} />
