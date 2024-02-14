@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 
 const SearchCity = () => {
     const [inputValue, setInputValue] = useState("")
+    const [airQualityIndex, setAirQualityIndex] = useState(null)
 
     function handleInputChange(event) {
         setInputValue(event.target.value)
@@ -46,9 +47,20 @@ const SearchCity = () => {
       return response.json();
     })
     .then(data => {
+        // console.log(data)
       // Handle air pollution forecast data
-      console.log(data);
+    //   console.log(data.list[0]);
+    //   console.log(data.list[0].main.aqi)
+
+      const airQualityInfo = data.list[0].main.aqi
+      setAirQualityIndex(airQualityInfo)
+      console.log(airQualityIndex) ////
+
+      const airQualityComponentsData = data.list[0].components.co
+      console.log(airQualityComponentsData)
     })
+
+
     .catch(error => {
       // Handle errors
       console.error('Error:', error);
@@ -122,6 +134,9 @@ function fetchAirPollutionForecast(cityName) {
       console.error('Error:', error);
     });
 }
+
+
+
 
 // Example usage:
 // fetchAirPollutionForecast('London');
