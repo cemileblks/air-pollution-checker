@@ -18,9 +18,9 @@ function CityIndividual() {
           Our chart visually represents comprehensive air pollution data for the
           selected country. It provides insights into various pollutants such as
           carbon monoxide (CO), ozone (O3) and others, offering a clear snapshot
-          of the air quality situation. Users can easily grasp the levels of
+          of the air quality situation. You can easily grasp the levels of
           different pollutants, aiding in understanding environmental conditions
-          and fostering informed decision-making for health and well-being
+          and make informed decision-making for health and well-being
         </div>
         <Harrycomponent />
       </section>
