@@ -1,0 +1,302 @@
+[
+  {
+    "Rank": 1,
+    "cityCountry": "San Francisco, USA",
+    "AQI_US": 4,
+    "label": "clean"
+  },
+  {
+    "Rank": 2,
+    "cityCountry": "Seattle, USA",
+    "AQI_US": 11,
+    "label": "clean"
+  },
+  {
+    "Rank": 3,
+    "cityCountry": "Vancouver BC, Canada",
+    "AQI_US": 12,
+    "label": "clean"
+  },
+  {
+    "Rank": 4,
+    "cityCountry": "Melbourne, Australia",
+    "AQI_US": 13,
+    "label": "clean"
+  },
+  {
+    "Rank": 5,
+    "cityCountry": "Sydney, Australia",
+    "AQI_US": 14,
+    "label": "clean"
+  },
+  {
+    "Rank": 6,
+    "cityCountry": "Detroit, USA",
+    "AQI_US": 17,
+    "label": "clean"
+  },
+  {
+    "Rank": 7,
+    "cityCountry": "New York City, USA",
+    "AQI_US": 19,
+    "label": "clean"
+  },
+  {
+    "Rank": 8,
+    "cityCountry": "Toronto, Canada",
+    "AQI_US": 21,
+    "label": "clean"
+  },
+  {
+    "Rank": 9,
+    "cityCountry": "Bern, Switzerland",
+    "AQI_US": 23,
+    "label": "clean"
+  },
+  {
+    "Rank": 10,
+    "cityCountry": "Brussels, Belgium",
+    "AQI_US": 24,
+    "label": "clean"
+  },
+  {
+    "Rank": 11,
+    "cityCountry": "Canberra, Australia",
+    "AQI_US": 24,
+    "label": "clean"
+  },
+  {
+    "Rank": 12,
+    "cityCountry": "Paris, France",
+    "AQI_US": 25,
+    "label": "clean"
+  },
+  {
+    "Rank": 13,
+    "cityCountry": "Montreal, Canada",
+    "AQI_US": 25,
+    "label": "clean"
+  },
+  {
+    "Rank": 14,
+    "cityCountry": "Vienna, Austria",
+    "AQI_US": 25,
+    "label": "clean"
+  },
+  {
+    "Rank": 15,
+    "cityCountry": "Houston, USA",
+    "AQI_US": 25,
+    "label": "clean"
+  },
+  {
+    "Rank": 16,
+    "cityCountry": "Salt Lake City, USA",
+    "AQI_US": 25,
+    "label": "clean"
+  },
+  {
+    "Rank": 17,
+    "cityCountry": "Krasnoyarsk, Russia",
+    "AQI_US": 26,
+    "label": "clean"
+  },
+  {
+    "Rank": 18,
+    "cityCountry": "Nice, France",
+    "AQI_US": 28,
+    "label": "clean"
+  },
+  {
+    "Rank": 19,
+    "cityCountry": "Bratislava, Slovakia",
+    "AQI_US": 28,
+    "label": "clean"
+  },
+  {
+    "Rank": 20,
+    "cityCountry": "Helsinki, Finland",
+    "AQI_US": 28,
+    "label": "clean"
+  },
+  {
+    "Rank": 21,
+    "cityCountry": "Madrid, Spain",
+    "AQI_US": 28,
+    "label": "clean"
+  },
+  {
+    "Rank": 22,
+    "cityCountry": "Amsterdam, Netherlands",
+    "AQI_US": 29,
+    "label": "clean"
+  },
+  {
+    "Rank": 23,
+    "cityCountry": "London, United Kingdom",
+    "AQI_US": 29,
+    "label": "clean"
+  },
+  {
+    "Rank": 24,
+    "cityCountry": "Mexico City, Mexico",
+    "AQI_US": 30,
+    "label": "clean"
+  },
+  {
+    "Rank": 25,
+    "cityCountry": "Minneapolis, USA",
+    "AQI_US": 32,
+    "label": "clean"
+  },
+  {
+    "Rank": 26,
+    "cityCountry": "Los Angeles, USA",
+    "AQI_US": 32,
+    "label": "clean"
+  },
+  {
+    "Rank": 27,
+    "cityCountry": "Kuching, Malaysia",
+    "AQI_US": 33,
+    "label": "clean"
+  },
+  {
+    "Rank": 28,
+    "cityCountry": "Rotterdam, Netherlands",
+    "AQI_US": 33,
+    "label": "clean"
+  },
+  {
+    "Rank": 29,
+    "cityCountry": "Sofia, Bulgaria",
+    "AQI_US": 33,
+    "label": "clean"
+  },
+  {
+    "Rank": 30,
+    "cityCountry": "Budapest, Hungary",
+    "AQI_US": 33,
+    "label": "clean"
+  },
+  {
+    "Rank": 31,
+    "cityCountry": "Rome, Italy",
+    "AQI_US": 34,
+    "label": "clean"
+  },
+  {
+    "Rank": 32,
+    "cityCountry": "Portland, USA",
+    "AQI_US": 34,
+    "label": "clean"
+  },
+  {
+    "Rank": 33,
+    "cityCountry": "Pristina, Kosovo",
+    "AQI_US": 35,
+    "label": "clean"
+  },
+  {
+    "Rank": 34,
+    "cityCountry": "Kyiv, Ukraine",
+    "AQI_US": 35,
+    "label": "clean"
+  },
+  {
+    "Rank": 35,
+    "cityCountry": "Munich, Germany",
+    "AQI_US": 37,
+    "label": "clean"
+  },
+  {
+    "Rank": 36,
+    "cityCountry": "Shenyang, China",
+    "AQI_US": 37,
+    "label": "clean"
+  },
+  {
+    "Rank": 37,
+    "cityCountry": "Sao Paulo, Brazil",
+    "AQI_US": 37,
+    "label": "clean"
+  },
+  {
+    "Rank": 38,
+    "cityCountry": "Denver, USA",
+    "AQI_US": 37,
+    "label": "clean"
+  },
+  {
+    "Rank": 39,
+    "cityCountry": "Oslo, Norway",
+    "AQI_US": 38,
+    "label": "clean"
+  },
+  {
+    "Rank": 40,
+    "cityCountry": "Washington, D.C., USA",
+    "AQI_US": 38,
+    "label": "clean"
+  },
+  {
+    "Rank": 41,
+    "cityCountry": "Kuala Lumpur, Malaysia",
+    "AQI_US": 40,
+    "label": "clean"
+  },
+  {
+    "Rank": 42,
+    "cityCountry": "Moscow, Russia",
+    "AQI_US": 41,
+    "label": "clean"
+  },
+  {
+    "Rank": 43,
+    "cityCountry": "Zagreb, Croatia",
+    "AQI_US": 42,
+    "label": "clean"
+  },
+  {
+    "Rank": 44,
+    "cityCountry": "Berlin, Germany",
+    "AQI_US": 45,
+    "label": "clean"
+  },
+  {
+    "Rank": 45,
+    "cityCountry": "Santiago, Chile",
+    "AQI_US": 45,
+    "label": "clean"
+  },
+  {
+    "Rank": 46,
+    "cityCountry": "Tashkent, Uzbekistan",
+    "AQI_US": 45,
+    "label": "clean"
+  },
+  {
+    "Rank": 47,
+    "cityCountry": "Beijing, China",
+    "AQI_US": 45,
+    "label": "clean"
+  },
+  {
+    "Rank": 48,
+    "cityCountry": "Belgrade, Serbia",
+    "AQI_US": 49,
+    "label": "clean"
+  },
+  {
+    "Rank": 49,
+    "cityCountry": "Dubai, United Arab Emirates",
+    "AQI_US": 50,
+    "label": "clean"
+  },
+  {
+    "Rank": 50,
+    "cityCountry": "Warsaw, Poland",
+    "AQI_US": 51,
+    "label": "clean"
+  }
+]

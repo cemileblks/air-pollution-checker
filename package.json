@@ -9,14 +9,15 @@
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
   },
+  "proxy": "https://places.googleapis.com",
   "dependencies": {
     "@emotion/react": "^11.11.3",
     "@emotion/styled": "^11.11.0",
     "@mui/icons-material": "^5.15.9",
     "@mui/material": "^5.15.9",
-    "@mui/x-charts": "^6.19.4",
-    "date-fns": "^3.3.1",
+    "axios": "^1.6.7",
     "localforage": "^1.10.0",
+    "maplibre-gl": "^4.0.0",
     "match-sorter": "^6.3.4",
     "moment": "^2.30.1",
     "react": "^18.2.0",
