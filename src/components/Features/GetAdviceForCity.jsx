@@ -1,7 +1,7 @@
-import React from 'react';
-import GetLatLong from '../GetLatLong/GetLatLong';// Importing the function to get latitude and longitude
-import GetAirQualityData from '../GetAirQualityData/GetAirQualityData'; //Importing the function to get air quality data
-import quality from '../../../assets/data/quality.json'; // Importing the advice data
+import React from "react";
+import GetLatLong from "./GetLatLong/GetLatLong"; // Importing the function to get latitude and longitude
+import GetAirQualityData from "./GetAirQualityData/GetAirQualityData"; //Importing the function to get air quality data
+import quality from "../../assets/data/quality.json"; // Importing the advice data
 
 const getAdviceForCity = async (cityName) => {
   try {
