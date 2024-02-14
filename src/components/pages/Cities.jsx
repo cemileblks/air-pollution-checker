@@ -58,20 +58,19 @@ const themedCard = createTheme({
   }
 })
 
-
 class Cities extends React.Component{
   render(){
     return (
       <>
-      <h2 className='city_ranking--header'>The cleanest cities</h2>
+      <h2 className='city_ranking--header'>Clean cities ranking</h2>
       <Container sx={{display: 'flex'}}className={'card--container'}>
         <ThemeProvider theme={themedCard}>
         {RankingBest.map((city, index)=>
-          index < 1 &&(
+          index < 5 &&(
           <Link to={`/city/${city.Rank}`} key={city.Rank}>
               <Card sx={{ width: 315 }}>
                 <React.Fragment>
-                  <CityPhotoSearch data={RankingBest} />
+                  <CityPhotoSearch cityName={city.cityCountry} />
                   <CardContent>
                     <Typography gutterBottom variant="h5" component="div" sx={{textAlign: 'left', color: '#ffffff'}}>
                     {city.Rank}: {city.cityCountry}
@@ -79,9 +78,6 @@ class Cities extends React.Component{
                     <Typography variant="body2" sx={{textAlign: 'left'}}>
                       AQI SCORE: {city.AQI_US}
                     </Typography>
-                    {/* <Typography variant="body2" sx={{textAlign: 'left'}}>
-                      Some pollution Number
-                    </Typography> */}
                   </CardContent>
                   </React.Fragment>
                 </Card>
@@ -89,21 +85,15 @@ class Cities extends React.Component{
           ))}
           </ThemeProvider>
       </Container>
-      <h2 className='city_ranking--header'>Most polluted cities</h2>
+      <h2 className='city_ranking--header'>Polluted cities ranking</h2>
       <Container sx={{display: 'flex'}}className={'card--container'}>
         <ThemeProvider theme={themedCard}>
         {RankingWorst.map((city, index)=>
-          index < 1 && (
+          index < 5 && (
           <Link to={`/city/${city.id}`} key={city.id}>
               <Card sx={{ width: 315 }}>
                 <React.Fragment>
-                  <CityPhotoSearch data={RankingWorst} />
-                  {/* <CardMedia
-                    component="img"
-                    alt="green iguana"
-                    height="300"
-                    image={city.imgUrl}
-                    /> */}
+                  <CityPhotoSearch cityName={city.cityCountry} />
                   <CardContent>
                     <Typography gutterBottom variant="h5" component="div" sx={{textAlign: 'left', color: '#ffffff'}}>
                     {city.Rank}: {city.cityCountry}
