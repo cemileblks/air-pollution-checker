@@ -1,5 +1,8 @@
 [
   {
+    "advice": "Adults and children with heart or lung problems are at greater risk of symptoms. Follow your doctor's usual advice about exercising and managing your condition. It is possible that very sensitive individuals may experience health effects even on Low air pollution days. Anyone experiencing symptoms should follow the guidance provided by the WHO."
+  },
+  {
     "level": "Good",
     "value": 1,
     "at_risk_persons": "Enjoy your regular outdoor activities.",
@@ -28,8 +31,5 @@
     "value": 5,
     "at_risk_persons": "Avoid strenuous physical activity. People with asthma may find they need to use their reliever inhaler more often.",
     "general_population": "Reduce physical exertion, particularly outdoors, especially if you experience symptoms such as cough or sore throat."
-  },
-  {
-    "advice": "Adults and children with heart or lung problems are at greater risk of symptoms. Follow your doctor's usual advice about exercising and managing your condition. It is possible that very sensitive individuals may experience health effects even on Low air pollution days. Anyone experiencing symptoms should follow the guidance provided by the WHO."
   }
 ]
