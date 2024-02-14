@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import CityMap from "../Features/CityMap/CityMap";
 import SearchResult from "./SearchResult";
+import Harrycomponent from "../../Harrycomponent/Harrycomponent";
 
 function CityIndividual() {
   const { cityName } = useParams();
@@ -13,7 +14,7 @@ function CityIndividual() {
         <SearchResult cityName={cityName} />
         <CityMap cityName={cityName} />
 
-        <div className="card_desc--wrapper">
+        <div className="card_desc--wrapper" style={{ marginTop: "20px" }}>
           Our chart visually represents comprehensive air pollution data for the
           selected country. It provides insights into various pollutants such as
           carbon monoxide (CO), ozone (O3) and others, offering a clear snapshot
