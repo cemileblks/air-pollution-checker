@@ -96,7 +96,7 @@ function Cities(){
     <Container sx={{display: 'flex'}}className={'card--container'}>
       <ThemeProvider theme={themedCard}>
       {cityData.map((city)=>(
-          <Link to={`/city/${city.id}`} key={city.id}>
+          <Link to={`/city/${city.cityName}`} key={city.cityName}>
             <Card sx={{ width: 315 }}>
               <React.Fragment>
                 <CardMedia

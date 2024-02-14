@@ -24,7 +24,7 @@ function SearchButton({ onSearch }) {
 
   const handleSearch = () => {
     onSearch(cityName);
-    navigate(`/city/${cityName}`);
+    navigate(`/city/${cityName}`); // navigate to city page on search
   };
 
 
