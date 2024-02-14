@@ -48,6 +48,9 @@ function CityMap({ cityName }) {
 
                     // Add color layer on the map based on air quality of the location
                     addColorLayer(mapInstance, airQualityData, cityPolygon);
+
+                    // Add description to the color presented on map
+                    addDescription(mapInstance, airQualityData);
                 } catch (error) {
                     console.error('Error fetching data:', error);
                 }
@@ -73,6 +76,55 @@ function CityMap({ cityName }) {
             }
         };
     }, [cityName]);
+
+    const addDescription = (map, airQualityData) => {
+        const { aqi } = airQualityData;
+        let description;
+   
+        switch (aqi) {
+            case 1: // Good
+                description = `Air pollution banding is Low`;
+                break;
+            case 2: // Fair
+                description = `Air pollution banding is Moderate`;
+                break;
+            case 3: // Moderate
+                description = `Air pollution banding is Moderate`;
+                break;
+            case 4: // Poor
+                description = `Air pollution banding is High`;
+                break;
+            case 5: // Very Poor
+                description = `Air pollution banding is Very High`;
+                break;
+            default:
+                description = `Unknown air quality banding `;
+        }
+   
+        // Checks for if map instance is valid and has center coordinates
+        if (map && map.getCenter()) {
+            const center = map.getCenter();
+            const lon = center.lng;
+            const lat = center.lat;
+   
+            // Checks if lon and lat values are valid numbers
+            if (!isNaN(lon) && !isNaN(lat)) {
+                // Add description as a popup to the map (maplibre properties)
+                const popup = new maplibre.Popup()
+                    .setLngLat([lon, lat])
+                    .setHTML(description)
+                    .addTo(map);
+   
+                // Set text color to black for readability
+                popup.getElement().style.color = 'black';
+            } else {
+                console.error('Invalid coordinates:', lon, lat);
+            }
+        } else {
+            console.error('Invalid map instance or could not center coordinates:', map);
+        }
+    };
+
 
 
     return (
