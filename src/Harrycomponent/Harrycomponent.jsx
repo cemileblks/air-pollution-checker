@@ -21,7 +21,7 @@ export default function Harrycomponent() {
   useEffect(() => {
     if (location) {
       fetch(
-        `http://api.openweathermap.org/geo/1.0/direct?q=${location}&appid=134a7bca60f2f212f1b9faaf871be508`
+        `https://api.openweathermap.org/geo/1.0/direct?q=${location}&appid=134a7bca60f2f212f1b9faaf871be508`
       )
         .then((response) => response.json())
         .then((result) => {
@@ -29,7 +29,7 @@ export default function Harrycomponent() {
           const lon = result[0].lon;
 
           fetch(
-            `http://api.openweathermap.org/data/2.5/air_pollution/history?lat=${lat}&lon=${lon}&start=${startDate}&end=${currentDate}&appid=134a7bca60f2f212f1b9faaf871be508`
+            `https://api.openweathermap.org/data/2.5/air_pollution/history?lat=${lat}&lon=${lon}&start=${startDate}&end=${currentDate}&appid=134a7bca60f2f212f1b9faaf871be508`
           )
             .then((response) => response.json())
             .then((result) => {
