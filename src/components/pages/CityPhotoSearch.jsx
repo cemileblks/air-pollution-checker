@@ -4,7 +4,7 @@ import CardMedia from '@mui/material/CardMedia';
 import bestCities from '../../assets/data/bestCities.json';
 import worstCities from '../../assets/data/worstCities.json';
 
-const ACCESS_KEY = '88gkD0JRYJ21slg9gnkhiOHGnijeLILIdCzDahiyb58'
+const ACCESS_KEY = import.meta.env.VITE_UNSPLASH_API_KEY
 
 // random Index
 function getRandomIndex(dataLength){

@@ -3,27 +3,30 @@ import Typography from '@mui/material/Typography';
 import Link from '@mui/material/Link';
 import NavigateNextIcon from '@mui/icons-material/NavigateNext';
 import Stack from '@mui/material/Stack';
+import { useNavigate, useLocation } from 'react-router-dom';
 
 function handleClick(event) {
+  const navigate = useNavigate();
   event.preventDefault();
-  console.info('You clicked a breadcrumb.');
+  navigate('/home')
 }
 
 function Breadcrumb(){
+  let cityName = ''
+  const location = useLocation();
+  // Convert the empty space
+  const decodedPath = decodeURIComponent(location.pathname);
+  if (decodedPath.includes('/city/')){
+    cityName = decodedPath.split('/city/' || '')
+  } else{
+    cityName = decodedPath.split('/' || '')
+  }
   const breadcrumbs = [
-    <Link underline="hover" key="1" color="inherit" href="/" onClick={handleClick}>
-      MUI
+    <Link underline="hover" key="1" color="inherit" href="/home" onClick={handleClick}>
+      HOME
     </Link>,
-    <Link
-      underline="hover"
-      key="2"
-      color="inherit"
-      href="/material-ui/getting-started/installation/"
-      onClick={handleClick}
-    >
-      Core
-    </Link>,    <Typography key="3" color="text.primary">
-      Breadcrumb
+    <Typography key="2" color="text.primary">
+      {cityName}
     </Typography>,
   ];
   return(
@@ -31,6 +34,7 @@ function Breadcrumb(){
     <Breadcrumbs
       separator={<NavigateNextIcon fontSize="small" />}
       aria-label="breadcrumb"
+      sx={{margin: '20px ! important'}}
     >
       {breadcrumbs}
     </Breadcrumbs>
