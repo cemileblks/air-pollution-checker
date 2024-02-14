@@ -1,35 +1,40 @@
 [
-  {
-    "advice": "Adults and children with heart or lung problems are at greater risk of symptoms. Follow your doctor's usual advice about exercising and managing your condition. It is possible that very sensitive individuals may experience health effects even on Low air pollution days. Anyone experiencing symptoms should follow the guidance provided by the WHO."
-  },
-  {
+{
     "level": "Good",
     "value": 1,
-    "at_risk_persons": "Enjoy your regular outdoor activities.",
-    "general_population": "Enjoy your regular outdoor activities."
+    "at_risk_persons": "Enjoy your regular outdoor activities. 🌳",
+    "general_population": "Enjoy your regular outdoor activities. 🌳",
+    "challenge": "Since the air quality is good, why not take a walk in the nearest park and enjoy nature?"
   },
   {
     "level": "Fair",
     "value": 2,
-    "at_risk_persons": "Consider reducing strenuous physical activity, particularly outdoors.",
-    "general_population": "Enjoy your regular outdoor activities."
+    "at_risk_persons": "Consider reducing strenuous physical activity, particularly outdoors.  😅",
+    "general_population": "Enjoy your regular outdoor activities. 🌳",
+    "challenge": "Let's make it a light exercise day! Try doing some yoga indoors or go for a leisurely stroll around your neighborhood."
   },
   {
     "level": "Moderate",
     "value": 3,
-    "at_risk_persons": "Reduce strenuous physical exertion, particularly outdoors, and particularly if you experience symptoms. People with asthma may find they need to use their reliever inhaler more often.",
-    "general_population": "If you are experiencing discomfort such as sore eyes, cough or sore throat consider reducing activity, particularly outdoors."
+    "at_risk_persons": "Reduce strenuous physical exertion, particularly outdoors, and particularly if you experience symptoms. People with asthma may find they need to use their reliever inhaler more often. 😷",
+    "general_population": "If you are experiencing discomfort such as sore eyes, cough, or sore throat consider reducing activity, particularly outdoors. 😕",
+    "challenge": "Let's get creative indoors! Try a new indoor workout routine or engage in a hobby you've been putting off. 🌳🌳"
   },
   {
     "level": "Poor",
     "value": 4,
-    "at_risk_persons": "Avoid strenuous physical activity. People with asthma may find they need to use their reliever inhaler more often.",
-    "general_population": "Reduce physical exertion, particularly outdoors, especially if you experience symptoms such as cough or sore throat."
+    "at_risk_persons": "Avoid strenuous physical activity. People with asthma may find they need to use their reliever inhaler more often.  😨",
+    "general_population": "Reduce physical exertion, particularly outdoors, especially if you experience symptoms such as cough or sore throat. 😷",
+    "challenge": "It's a good day for indoor activities! Challenge yourself to try a new recipe or start a DIY project. "
   },
   {
     "level": "Very Poor",
     "value": 5,
-    "at_risk_persons": "Avoid strenuous physical activity. People with asthma may find they need to use their reliever inhaler more often.",
-    "general_population": "Reduce physical exertion, particularly outdoors, especially if you experience symptoms such as cough or sore throat."
+    "at_risk_persons": "Avoid strenuous physical activity. People with asthma may find they need to use their reliever inhaler more often. 😷",
+    "general_population": "Reduce physical exertion, particularly outdoors, especially if you experience symptoms such as cough or sore throat. 😨",
+    "challenge": "Let's stay cozy indoors! Have a movie marathon or spend some quality time with loved ones. 🌳🌳"
+  },
+  {
+    "advice": "Adults and children with heart or lung problems are at greater risk of symptoms. Follow your doctor's usual advice about exercising and managing your condition. It is possible that very sensitive individuals may experience health effects even on Low air pollution days. Anyone experiencing symptoms should follow the guidance provided by the WHO.  "
   }
 ]
