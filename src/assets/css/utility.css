@@ -12,3 +12,15 @@
 	padding: 0 65px;
 	margin-bottom: 50px;
 }
+
+.button--wrapper {
+	width: 100%;
+	text-align: center;
+}
+
+.button--wrapper button {
+	margin: 0 auto;
+	background: transparent;
+	border: 1px solid var(--white);
+	color: var(--white);
+}

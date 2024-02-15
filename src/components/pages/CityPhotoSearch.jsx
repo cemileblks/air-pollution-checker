@@ -60,7 +60,8 @@ async function fetchCityImage(cityName){
 }
 
 function CityPhotoSearch({cityName}){
-  // console.log(combinedCities)
+  // console.log(cityName)
+
   const [imageUrl, setImageUrl] = useState('');
 
   useEffect(()=>{
