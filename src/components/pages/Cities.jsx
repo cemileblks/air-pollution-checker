@@ -58,15 +58,19 @@ const themedCard = createTheme({
   }
 })
 
-class Cities extends React.Component{
-  render(){
+const cityDisplayNum = 6
+
+  class Cities extends React.Component{
+    render(){
+
+
     return (
       <>
       <h2 className='city_ranking--header'>Clean cities ranking</h2>
       <Container sx={{display: 'flex'}}className={'card--container'}>
         <ThemeProvider theme={themedCard}>
         {RankingBest.map((city, index)=>
-          index < 5 &&(
+          index < cityDisplayNum &&(
           <Link to={`/city/${city.cityCountry}`} key={city.cityCountry}>
               <Card sx={{ width: 315 }}>
                 <React.Fragment>
@@ -84,12 +88,13 @@ class Cities extends React.Component{
             </Link>
           ))}
           </ThemeProvider>
+          {/* <button onClick={loadMore} style={{ margin: '20px auto', display: 'block' }}>LOAD MORE</button> */}
       </Container>
       <h2 className='city_ranking--header'>Polluted cities ranking</h2>
       <Container sx={{display: 'flex'}}className={'card--container'}>
         <ThemeProvider theme={themedCard}>
         {RankingWorst.map((city, index)=>
-          index < 5 && (
+          index < cityDisplayNum && (
           <Link to={`/city/${city.cityCountry}`} key={city.cityCountry}>
               <Card sx={{ width: 315 }}>
                 <React.Fragment>
