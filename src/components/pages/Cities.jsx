@@ -66,7 +66,7 @@ const cityDisplayNum = 6
 
     return (
       <>
-      <h2 className='city_ranking--header'>Clean cities ranking</h2>
+      <h2 className='city_ranking--header'>Global Green Cities Inde</h2>
       <Container sx={{display: 'flex'}}className={'card--container'}>
         <ThemeProvider theme={themedCard}>
         {RankingBest.map((city, index)=>
@@ -90,7 +90,7 @@ const cityDisplayNum = 6
           </ThemeProvider>
           {/* <button onClick={loadMore} style={{ margin: '20px auto', display: 'block' }}>LOAD MORE</button> */}
       </Container>
-      <h2 className='city_ranking--header'>Polluted cities ranking</h2>
+      <h2 className='city_ranking--header'>Global Pollution Hotspots Index</h2>
       <Container sx={{display: 'flex'}}className={'card--container'}>
         <ThemeProvider theme={themedCard}>
         {RankingWorst.map((city, index)=>
