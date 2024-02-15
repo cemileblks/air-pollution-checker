@@ -95,7 +95,7 @@ export default function Harrycomponent() {
                 label: "so2",
               },
             ]}
-            height={290}
+            height={350}
             xAxis={[
               {
                 data: [

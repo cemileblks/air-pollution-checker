@@ -21,7 +21,7 @@ import '../assets/css/reset.css'
 import '../assets/css/style.css'
 
 const drawerWidth = 240;
-const navItems = ['HOME', 'ABOUT', 'CONTACT'];
+const navItems = ['HOME', 'ABOUT'];
 
 function Header(props){
   const { window } = props;

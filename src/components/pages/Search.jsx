@@ -35,7 +35,7 @@ function SearchButton({ onSearch }) {
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
-          '& > :not(style)': { m: 1 },
+          flexDirection: 'column'
         }}
       >
         <TextField
@@ -45,7 +45,7 @@ function SearchButton({ onSearch }) {
           onChange={handleChange}
           onKeyDown={handleKeyDown}
         />
-        <Button variant="contained" onClick={handleSearch}>Search</Button>
+        <Button variant="contained" sx={{display: 'block'}}onClick={handleSearch}>Search</Button>
       </Box>
     </div>
   );

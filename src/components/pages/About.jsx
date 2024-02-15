@@ -1,103 +1,69 @@
 import React from "react";
 import Box from '@mui/material/Box';
-import Card from '@mui/material/Card';
-import CardActions from '@mui/material/CardActions';
-import CardContent from '@mui/material/CardContent';
-import Button from '@mui/material/Button';
-import Typography from '@mui/material/Typography';
+import { Grid, Card, CardContent, Typography, CardMedia} from '@mui/material';
 
-const bull = (
-  <Box
-    component="span"
-    sx={{ display: 'inline-block', mx: '2px', transform: 'scale(0.8)' }}
-  >
-    •
-  </Box>
-);
-
-const card = (
-  <React.Fragment>
-    <CardContent>
-      <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
-        Member
-      </Typography>
-      <Typography variant="h5" component="div">
-        Balkas, Cemile
-      </Typography>
-      <Typography sx={{ mb: 1.5 }} color="text.secondary">
-        Lead / Worked on the map
-      </Typography>
-      <Typography variant="body2">
-      <a rel="noreferrer" href='https://github.com/cemileblks' target="_blank">Gitihub</a>
-      </Typography>
-    </CardContent>
-    <CardContent>
-      <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
-        Member
-      </Typography>
-      <Typography variant="h5" component="div">
-        Kwamla aglanu, Sampson
-      </Typography>
-      <Typography sx={{ mb: 1.5 }} color="text.secondary">
-        Worked on Air pollution data
-      </Typography>
-      <Typography variant="body2">
-      <a rel="noreferrer" href='https://github.com/Sam-Wisdoms' target="_blank">Gitihub</a>
-      </Typography>
-    </CardContent>
-    <CardContent>
-      <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
-        Member
-      </Typography>
-      <Typography variant="h5" component="div">
-        Ikekeonwu, Obioma
-      </Typography>
-      <Typography sx={{ mb: 1.5 }} color="text.secondary">
-        Worked on JSON data
-      </Typography>
-      <Typography variant="body2">
-      <a rel="noreferrer" href='https://github.com/obeeyoma ' target="_blank">Gitihub</a>
-      </Typography>
-    </CardContent>
-    <CardContent>
-      <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
-        Member
-      </Typography>
-      <Typography variant="h5" component="div">
-      Harry Hing
-      </Typography>
-      <Typography sx={{ mb: 1.5 }} color="text.secondary">
-       Worked on 3D charts
-      </Typography>
-      <Typography variant="body2">
-      <a rel="noreferrer" href='https://github.com/harryh38' target="_blank">Gitihub</a>
-      </Typography>
-    </CardContent>
-    <CardContent>
-      <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
-        Member
-      </Typography>
-      <Typography variant="h5" component="div">
-      Kawamura, Takuya
-      </Typography>
-      <Typography sx={{ mb: 1.5 }} color="text.secondary">
-      Worked on general layout
-      </Typography>
-      <Typography variant="body2">
-        <a rel="noreferrer" href='https://github.com/sebecjeanluc' target="_blank">Gitihub</a>
-      </Typography>
-    </CardContent>
-  </React.Fragment>
-);
+const cardsData = [
+  {
+    name: 'Balkas, Cemile',
+    role: 'Lead / Worked on the map',
+    github: 'https://github.com/cemileblks',
+    image: 'public/images/pf/cemille.jpeg',
+  },
+  {
+    name: 'Kwamla aglanu, Sampson',
+    role: 'Worked on Air pollution data',
+    github: 'https://github.com/Sam-Wisdoms',
+    image: 'public/images/pf/sampson.jpeg',
+  },
+  {
+    name: ' Ikekeonwu, Obioma',
+    role: 'Worked on JSON dataa',
+    github: 'https://github.com/obeeyoma',
+    image: 'public/images/pf/obioma.png',
+  },
+  {
+    name: 'Harry Hing',
+    role: 'Worked on 3D charts',
+    github: 'https://github.com/harryh38',
+    image: 'public/images/pf/harry.png',
+  },
+  {
+    name: 'Kawamura, Takuy',
+    role: 'Worked on the general layout',
+    github: 'https://github.com/sebecjeanluc',
+    image: 'public/images/pf/tak.jpeg',
+  },
+];
 
 
 function About(){
   return (
     <section className="section--wrapper">
       <h2 className='city_ranking--header'>About us</h2>
-       <Box sx={{ minWidth: 275 }}>
-        <Card variant="outlined">{card}</Card>
-      </Box>
+      <Grid container spacing={4}>
+      {cardsData.map((card, index) => (
+        <Grid item xs={12} sm={6} md={4} key={index}>
+          <Card>
+            <CardMedia
+              component="img"
+              height="250"
+              image={card.image}
+              alt={card.name}
+            />
+            <CardContent>
+              <Typography gutterBottom variant="h5" component="div">
+                {card.name}
+              </Typography>
+              <Typography variant="body2" color="text.secondary">
+                {card.role}
+                <br />
+                <a rel="noreferrer" href={card.github} target="_blank">Github</a>
+              </Typography>
+            </CardContent>
+          </Card>
+        </Grid>
+      ))}
+    </Grid>
     </section>
   )
 }

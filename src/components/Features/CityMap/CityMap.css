@@ -1,14 +1,15 @@
 .map-wrapper {
-    display: flex;
-    justify-content: center;
-    /* Center horizontally */
-    align-items: center;
-    /* Center vertically */
-    height: 80vh;
-    /* Make the wrapper take the full height of the viewport */
+	/* display: flex; */
+  display: block
+	/* justify-content: center; */
+	/* Center horizontally */
+	align-items: center;
+	/* Center vertically */
+	/* height: 80vh; */
+	/* Make the wrapper take the full height of the viewport */
 }
 
 .map-container {
-    height: 400px;
-    width: 400px;
+	height: 400px;
+	width: 100%;
 }
