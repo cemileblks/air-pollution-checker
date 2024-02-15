@@ -7,31 +7,31 @@ const cardsData = [
     name: 'Balkas, Cemile',
     role: 'Lead / Worked on the map',
     github: 'https://github.com/cemileblks',
-    image: 'public/images/pf/cemille.jpeg',
+    image: '/images/pf/cemille.jpeg',
   },
   {
     name: 'Kwamla aglanu, Sampson',
     role: 'Worked on Air pollution data',
     github: 'https://github.com/Sam-Wisdoms',
-    image: 'public/images/pf/sampson.jpeg',
+    image: '/images/pf/sampson.jpeg',
   },
   {
     name: ' Ikekeonwu, Obioma',
     role: 'Worked on JSON dataa',
     github: 'https://github.com/obeeyoma',
-    image: 'public/images/pf/obioma.png',
+    image: '/images/pf/obioma.png',
   },
   {
     name: 'Harry Hing',
     role: 'Worked on 3D charts',
     github: 'https://github.com/harryh38',
-    image: 'public/images/pf/harry.png',
+    image: '/images/pf/harry.png',
   },
   {
     name: 'Kawamura, Takuy',
     role: 'Worked on the general layout',
     github: 'https://github.com/sebecjeanluc',
-    image: 'public/images/pf/tak.jpeg',
+    image: '/images/pf/tak.jpeg',
   },
 ];
 
