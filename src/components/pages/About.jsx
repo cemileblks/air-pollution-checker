@@ -10,7 +10,7 @@ const cardsData = [
     image: '/images/pf/cemille.jpeg',
   },
   {
-    name: 'Kwamla aglanu, Sampson',
+    name: 'Amenyenu, Sam-Wisdoms',
     role: 'Worked on Air pollution data',
     github: 'https://github.com/Sam-Wisdoms',
     image: '/images/pf/sampson.jpeg',
