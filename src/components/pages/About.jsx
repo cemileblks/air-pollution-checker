@@ -25,7 +25,7 @@ const cardsData = [
     name: 'Harry Hing',
     role: 'Worked on 3D charts',
     github: 'https://github.com/harryh38',
-    image: '/images/pf/harry.png',
+    image: '/images/pf/harry.jpg',
   },
   {
     name: 'Kawamura, Takuy',
